@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "oxc.oxc-vscode",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "dsznajder.es7-react-js-snippets",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "eamodio.gitlens",
+    "xabikos.javascriptsnippets",
+    "ms-ceintl.vscode-language-pack-it",
+    "daniel-duc.daniel-material-palenight-theme"
+  ]
+}
