@@ -184,7 +184,7 @@ export const LANDING = {
       eyebrow: 'PARTECIPA AL PROGETTO',
       title: ['Quanto conosci il mondo del sakè?'],
       lead: [
-        'Stiamo esplorando quanto sia conosciuta in Italia la cultura del sakè giapponese. Rispondi a tre semplici domande e aiutaci a capire quali aspetti suscitano maggiore curiosità.',
+        'Stiamo esplorando quanto sia conosciuta in Italia la cultura del sakè giapponese. Rispondi a quattro semplici domande e aiutaci a capire quali aspetti suscitano maggiore curiosità.',
       ],
       questions: [
         {
@@ -217,6 +217,15 @@ export const LANDING = {
             { label: 'Sì, molto.', value: 'si' },
             { label: 'Forse.', value: 'forse' },
             { label: 'Non particolarmente.', value: 'no' },
+          ],
+        },
+        {
+          id: 'q4',
+          title: 'Ti piacerebbe provare il vero sakè giapponese un giorno?',
+          options: [
+            { label: 'Sì, sicuramente.', value: 'sicuramente' },
+            { label: 'Forse, sono curioso/a.', value: 'forse' },
+            { label: 'No, non per ora.', value: 'no' },
           ],
         },
       ],
@@ -470,6 +479,14 @@ export const LANDING = {
             { label: 'Non particolarmente.', value: 'no' },
           ],
         },
+        {
+          title: 'Ti piacerebbe provare il vero sakè giapponese un giorno?',
+          options: [
+            { label: 'Sì, sicuramente.', value: 'sicuramente' },
+            { label: 'Forse, sono curioso/a.', value: 'forse' },
+            { label: 'No, non per ora.', value: 'no' },
+          ],
+        },
       ],
       skip: 'Salta questionario',
       next: 'Avanti',
@@ -687,7 +704,7 @@ export const LANDING = {
       eyebrow: 'PARTECIPA AL PROGETTO',
       title: ['Quanto conosci il mondo del sakè?'],
       lead: [
-        'Stiamo esplorando quanto sia conosciuta in Italia la cultura del sakè giapponese. Rispondi a tre semplici domande e aiutaci a capire quali aspetti suscitano maggiore curiosità.',
+        'Stiamo esplorando quanto sia conosciuta in Italia la cultura del sakè giapponese. Rispondi a quattro semplici domande e aiutaci a capire quali aspetti suscitano maggiore curiosità.',
       ],
       questions: [
         {
@@ -720,6 +737,15 @@ export const LANDING = {
             { label: 'Sì, molto.', value: 'si' },
             { label: 'Forse.', value: 'forse' },
             { label: 'Non particolarmente.', value: 'no' },
+          ],
+        },
+        {
+          id: 'q4',
+          title: 'Ti piacerebbe provare il vero sakè giapponese un giorno?',
+          options: [
+            { label: 'Sì, sicuramente.', value: 'sicuramente' },
+            { label: 'Forse, sono curioso/a.', value: 'forse' },
+            { label: 'No, non per ora.', value: 'no' },
           ],
         },
       ],
