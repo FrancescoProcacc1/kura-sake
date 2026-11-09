@@ -21,6 +21,7 @@ coverage
 .vite
 .turbo
 .eslintcache
+.oxlintcache
 .stylelintcache
 
 .DS_Store

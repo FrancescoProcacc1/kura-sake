@@ -1,0 +1,127 @@
+.scopri {
+  width: 100%;
+  padding-block: 6rem;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-card);
+}
+
+.scopri__grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (width >= 64rem) {
+  .scopri__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 4rem;
+  }
+}
+
+.scopri__figure {
+  order: 2;
+}
+
+@media (width >= 64rem) {
+  .scopri__figure {
+    grid-column: span 5 / span 5;
+    order: 1;
+  }
+}
+
+.scopri__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-muted);
+}
+
+.scopri__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scopri__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 1;
+}
+
+@media (width >= 64rem) {
+  .scopri__content {
+    grid-column: span 7 / span 7;
+    order: 2;
+  }
+}
+
+.scopri__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.scopri__title {
+  margin-bottom: 1.5rem;
+}
+
+.scopri__lead {
+  margin-bottom: 2.5rem;
+}
+
+/* Interruzione di riga presente solo da 640px (hidden sm:inline). */
+.scopri__lead-break {
+  display: none;
+}
+
+@media (width >= 40rem) {
+  .scopri__lead-break {
+    display: inline;
+  }
+}
+
+.scopri__facts {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+@media (width >= 40rem) {
+  .scopri__facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.scopri__fact-title {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+}
+
+.scopri__fact-text {
+  margin-top: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.625;
+  font-weight: 400;
+  color: var(--color-gray);
+}
+
+@media (width >= 40rem) {
+  .scopri__fact-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}

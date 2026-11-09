@@ -1,0 +1,114 @@
+.giappone {
+  width: 100%;
+  padding-block: 6rem;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-card);
+}
+
+.giappone__intro {
+  max-width: 48rem;
+  margin-bottom: 4rem;
+}
+
+.giappone__title {
+  margin-bottom: 1.25rem;
+}
+
+/* Interruzione di riga presente solo da 640px (hidden sm:inline). */
+.giappone__lead-break {
+  display: none;
+}
+
+@media (width >= 40rem) {
+  .giappone__lead-break {
+    display: inline;
+  }
+}
+
+.giappone__grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (width >= 64rem) {
+  .giappone__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+.giappone__figure {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (width >= 64rem) {
+  .giappone__figure {
+    grid-column: span 7 / span 7;
+  }
+}
+
+.giappone__media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-muted);
+}
+
+.giappone__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.giappone__boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+@media (width >= 64rem) {
+  .giappone__boxes {
+    grid-column: span 5 / span 5;
+  }
+}
+
+.giappone__box {
+  padding: 1.75rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.giappone__box-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.giappone__box-title {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  color: var(--color-charcoal);
+}
+
+.giappone__box-text {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.625;
+  font-weight: 400;
+  color: var(--color-gray);
+}
