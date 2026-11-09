@@ -1,11 +1,27 @@
 import './TabletFooter.css';
 import './TabletTheme.css';
 
+import { Link } from 'react-router-dom';
+
 import { LANDING } from '../../content/landing.js';
 
 const footer = LANDING.tablet.footer;
 
 const CURRENT_YEAR = new Date().getFullYear();
+
+function TabletFooterLink({ link }) {
+  const isRoute = link.href.startsWith('/');
+
+  return isRoute ? (
+    <Link className="t-body-sm tablet-footer__link" to={link.href}>
+      {link.label}
+    </Link>
+  ) : (
+    <a className="t-body-sm tablet-footer__link" href={link.href}>
+      {link.label}
+    </a>
+  );
+}
 
 function TabletFooter() {
   return (
@@ -28,13 +44,7 @@ function TabletFooter() {
 
               {group.links ? (
                 group.links.map((link) => (
-                  <a
-                    className="t-body-sm tablet-footer__link"
-                    href={link.href}
-                    key={link.label}
-                  >
-                    {link.label}
-                  </a>
+                  <TabletFooterLink key={link.label} link={link} />
                 ))
               ) : (
                 <>

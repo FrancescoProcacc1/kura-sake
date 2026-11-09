@@ -1,11 +1,21 @@
 /*
  * Testi con marcatura inline: ogni segmento è una stringa semplice, un
  * oggetto { em: 'testo' } per l'italic o { link: 'testo', href } per un link.
+ * Gli href interni (che iniziano con "/") usano Link di react-router.
  */
+import { Link } from 'react-router-dom';
+
 function RichText({ segments }) {
   return segments.map((segment, index) => {
     if (typeof segment === 'string') return segment;
     if (segment.em) return <em key={index}>{segment.em}</em>;
+    if (segment.href.startsWith('/')) {
+      return (
+        <Link key={index} to={segment.href}>
+          {segment.link}
+        </Link>
+      );
+    }
     return (
       <a key={index} href={segment.href}>
         {segment.link}

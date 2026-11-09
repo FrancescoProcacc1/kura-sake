@@ -1,0 +1,550 @@
+/* Classi specifiche della pagina tablet "La storia del sakè".
+   La cornice (tablet-main, tablet-container), i pulsanti (tablet-btn)
+   e la tipografia (t-*) arrivano dalla home tablet / TabletTheme.css. */
+
+/* Il gap di 7rem della home tablet è troppo generoso per l'articolo. */
+.storia-t-container {
+  gap: 2rem;
+  padding-block: 1.5rem;
+}
+
+.storia-t-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-breadcrumb a {
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.storia-t-breadcrumb a:hover {
+  color: var(--t-primary);
+}
+
+.storia-t-breadcrumb__sep {
+  color: var(--t-surface-dim);
+  user-select: none;
+}
+
+.storia-t-breadcrumb__current {
+  font-weight: 500;
+  color: var(--t-on-surface);
+}
+
+/* HERO */
+
+.storia-t-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.storia-t-hero__title {
+  font-size: 44px;
+  line-height: 52px;
+}
+
+.storia-t-hero__figure {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--t-surface-container-low);
+}
+
+.storia-t-hero__image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.storia-t-hero__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: var(--t-surface-container-low);
+}
+
+/* FIGURE DI SEZIONE */
+
+.storia-t-figure {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--t-surface-container-low);
+}
+
+.storia-t-figure__frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.storia-t-figure__image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.storia-t-figure__image--mono {
+  filter: grayscale(1) contrast(1.1);
+}
+
+.storia-t-figure__badge {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: rgb(34 34 34 / 75%);
+}
+
+.storia-t-figure__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.storia-t-figure__caption-text {
+  font-style: normal;
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-figure__caption-tag {
+  text-transform: uppercase;
+  color: var(--t-outline);
+}
+
+/* SEZIONI */
+
+.storia-t-eyebrow {
+  color: var(--t-primary);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.storia-t-eyebrow--center {
+  align-self: center;
+}
+
+.storia-t-h2 {
+  line-height: 1.2;
+}
+
+.storia-t-lead {
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.storia-t-section__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.storia-t-divider {
+  height: 1px;
+  background-color: var(--t-surface-variant);
+}
+
+.storia-t-paragraphs,
+.storia-t-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-strong {
+  font-weight: 500;
+  color: var(--t-on-surface);
+}
+
+.storia-t-em {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--t-on-surface);
+}
+
+/* BOX "LO SAPEVI?" */
+
+.storia-t-know {
+  position: relative;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: var(--t-surface-container-low);
+}
+
+.storia-t-know::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 0.25rem;
+  background-color: var(--t-primary);
+}
+
+.storia-t-know__body {
+  padding-left: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.storia-t-know__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.storia-t-know__icon {
+  font-size: 20px;
+  color: var(--t-primary);
+}
+
+.storia-t-know__title {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--t-primary);
+}
+
+.storia-t-know__text {
+  color: var(--t-on-surface);
+}
+
+/* TIMELINE A 6 PERIODI */
+
+.storia-t-periods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.storia-t-period {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--t-surface-container-lowest);
+}
+
+.storia-t-period__kanji {
+  position: absolute;
+  top: -0.75rem;
+  right: 1rem;
+  font-family: var(--font-serif);
+  font-size: 64px;
+  line-height: 1;
+  color: var(--t-surface-container-high);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+}
+
+.storia-t-period__era-row {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.storia-t-period__era {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--t-primary);
+}
+
+.storia-t-period__title {
+  position: relative;
+  font-weight: 500;
+}
+
+.storia-t-period__text {
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-toggle {
+  justify-self: start;
+  width: fit-content;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--t-primary);
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.storia-t-toggle:hover {
+  text-decoration: underline;
+  color: #680b11;
+}
+
+.storia-t-period__more {
+  padding: 0.625rem;
+  background-color: var(--t-surface-container-low);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.storia-t-period__more[hidden] {
+  display: none;
+}
+
+.storia-t-period__more-label {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--t-on-surface);
+}
+
+.storia-t-period__more-text {
+  color: var(--t-on-surface);
+}
+
+/* GLOSSARIO */
+
+.storia-t-glossary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (width >= 48rem) {
+  .storia-t-glossary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.storia-t-glossary__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--t-surface-container-lowest);
+}
+
+.storia-t-glossary__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.375rem;
+}
+
+.storia-t-glossary__name {
+  font-weight: 500;
+}
+
+.storia-t-glossary__kanji {
+  opacity: 0.6;
+  color: var(--t-primary);
+}
+
+.storia-t-glossary__text {
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-glossary__label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--t-outline);
+}
+
+/* BOX UNESCO */
+
+.storia-t-unesco {
+  position: relative;
+  padding: 1.75rem;
+  background-color: var(--t-surface-container-low);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.storia-t-unesco::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 0.375rem;
+  background-color: var(--t-primary);
+}
+
+.storia-t-unesco__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.storia-t-unesco__icon {
+  font-size: 24px;
+  color: var(--t-primary);
+}
+
+.storia-t-unesco__kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--t-primary);
+}
+
+.storia-t-unesco__title {
+  color: var(--t-on-surface);
+}
+
+.storia-t-unesco__text {
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-unesco__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--t-primary);
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.storia-t-unesco__link:hover {
+  color: var(--t-on-surface);
+}
+
+.storia-t-unesco__link-icon {
+  font-size: 16px;
+}
+
+/* CALL TO ACTION */
+
+.storia-t-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  background-color: var(--t-surface-container-low);
+}
+
+.storia-t-cta__title {
+  max-width: 500px;
+}
+
+.storia-t-cta__lead {
+  max-width: 540px;
+  color: var(--t-on-surface-variant);
+  margin-bottom: 0.75rem;
+}
+
+.storia-t-cta__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+@media (width >= 40rem) {
+  .storia-t-cta__actions {
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+  }
+}
+
+/* FONTI */
+
+.storia-t-sources__head {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.storia-t-sources__icon {
+  font-size: 18px;
+  color: var(--t-outline);
+}
+
+.storia-t-sources__kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-sources__title {
+  margin-bottom: 0.25rem;
+}
+
+.storia-t-sources__lead {
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-sources__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+@media (width >= 48rem) {
+  .storia-t-sources__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.storia-t-source {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background-color: var(--t-surface-container-low);
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.storia-t-source:hover {
+  background-color: var(--t-surface-container-high);
+}
+
+.storia-t-source__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.storia-t-source__title {
+  font-weight: 600;
+  color: var(--t-on-surface);
+}
+
+.storia-t-source__meta {
+  color: var(--t-on-surface-variant);
+}
+
+.storia-t-source__link-icon {
+  flex-shrink: 0;
+  font-size: 16px;
+  color: var(--t-outline);
+}

@@ -1,10 +1,26 @@
 import './MobileFooter.css';
 
+import { Link } from 'react-router-dom';
+
 import { LANDING } from '../../content/landing.js';
 
 const footer = LANDING.mobile.footer;
 
 const CURRENT_YEAR = new Date().getFullYear();
+
+function MobileFooterLink({ link }) {
+  const isRoute = link.href.startsWith('/');
+
+  return isRoute ? (
+    <Link className="mobile-footer__link" to={link.href}>
+      {link.label}
+    </Link>
+  ) : (
+    <a className="mobile-footer__link" href={link.href}>
+      {link.label}
+    </a>
+  );
+}
 
 function MobileFooter() {
   return (
@@ -19,9 +35,7 @@ function MobileFooter() {
 
         <nav className="mobile-footer__nav">
           {footer.links.map((link) => (
-            <a className="mobile-footer__link" href={link.href} key={link.id}>
-              {link.label}
-            </a>
+            <MobileFooterLink key={link.id} link={link} />
           ))}
         </nav>
 

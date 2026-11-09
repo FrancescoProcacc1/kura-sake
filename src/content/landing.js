@@ -1,12 +1,11 @@
 /*
  * Contenuti della landing KURA, divisi per variante di layout.
  *
- * Ogni variante (desktop / tablet / mobile) ha copy, etichette e dati
- * propri: i testi restano divergenti come nei prototipi di partenza, mentre
- * la struttura dei dati (elementi, fasi, box, domande) è condivisa.
- *
- * I titoli sono array di righe: le varianti che vogliono un'interruzione
- * esplicita ne forniscono più di una, le altre una sola.
+ * I testi sono identici in tutte le varianti (fonte: LANDING.desktop);
+ * restano divergenti solo struttura dei dati, icone/kanji/numeri e
+ * elementi di layout (footer a gruppi in tablet, menu indicizzato
+ * in mobile, ecc.). Se modifichi un testo desktop, riportalo anche
+ * nelle varianti tablet e mobile.
  */
 
 export const LANDING = {
@@ -262,7 +261,7 @@ export const LANDING = {
       newsletterSubmit: 'Resta aggiornato →',
       newsletterConsent: [
         'Accetto di ricevere comunicazioni editoriali e confermo di aver letto la ',
-        { link: 'Privacy Policy', href: '#privacy' },
+        { link: 'Privacy Policy', href: '/privacy-policy' },
         '.',
       ],
       newsletterFeedback:
@@ -277,9 +276,8 @@ export const LANDING = {
         { id: 'produzione', label: 'Produzione', href: '#produzione' },
         { id: 'giappone', label: 'Giappone', href: '#giappone' },
         { id: 'progetto', label: 'Il progetto', href: '#progetto' },
-        { id: 'contatti', label: 'Contatti', href: '#contatti' },
-        { id: 'privacy', label: 'Privacy Policy', href: '#privacy' },
-        { id: 'cookie', label: 'Cookie Policy', href: '#cookie' },
+        { id: 'privacy', label: 'Privacy Policy', href: '/privacy-policy' },
+        { id: 'cookie', label: 'Cookie Policy', href: '/cookie-policy' },
       ],
       note: 'Progetto culturale indipendente. Nessun fine commerciale o vendita di prodotti.',
       copyright: 'KURA. Tutti i diritti riservati.',
@@ -295,7 +293,7 @@ export const LANDING = {
     ],
 
     hero: {
-      eyebrow: 'Un viaggio nella cultura giapponese',
+      eyebrow: 'UN VIAGGIO NELLA CULTURA GIAPPONESE',
       titleSegments: ['Conosci davvero il ', { em: 'sakè' }, ' giapponese?'],
       lead: [
         'Scopri un mondo fatto di tradizioni, artigiani, territori e conoscenze tramandate nel tempo. Un viaggio attraverso una delle espressioni più affascinanti della cultura giapponese.',
@@ -303,143 +301,139 @@ export const LANDING = {
       ctaPrimary: 'Inizia a scoprire →',
       ctaSecondary: 'La sua storia',
       image: '/images/cantina-kura.jpg',
-      imageAlt:
-        'Antica cantina tradizionale in legno con sfera sugidama, Takayama',
-      captionTitle: '杉玉 (Sugidama)',
-      captionText: 'Simbolo di fermentazione e nuovo raccolto',
-      captionTag: 'KURA ARCHIVE 01',
+      imageAlt: 'Antica cantina tradizionale con sfera sugidama in cedro',
+      captionTitle: 'FIG. 01 — KURA',
+      captionText: 'Antica cantina tradizionale con sfera sugidama in cedro',
     },
 
     scopri: {
-      eyebrow: 'Alla scoperta del sakè',
-      title: ['Molto più di una bevanda.', 'Una storia millenaria.'],
+      eyebrow: 'ALLA SCOPERTA DEL SAKÈ',
+      title: ['Molto più di una bevanda. Una storia millenaria.'],
       lead: [
         'Il sakè, conosciuto in Giappone come ',
         { em: 'nihonshu' },
-        ', è una bevanda alcolica fermentata a base di riso e acqua, prodotta grazie all’azione combinata del kōji e dei lieviti.',
+        ', è una bevanda alcolica fermentata a base di riso e acqua, prodotta grazie all’azione del kōji e dei lieviti.',
       ],
       leadSecondary: [
-        'La sua storia è profondamente intrecciata con quella della civiltà giapponese: dalle antiche cerimonie religiose Shintoiste alle conoscenze artigianali tramandate rigorosamente per via orale attraverso le generazioni di mastri birrai.',
+        'La sua storia è profondamente intrecciata con quella del Giappone: dalle tradizioni religiose alle conoscenze artigianali tramandate attraverso le generazioni.',
       ],
       leadTag: 'Nihonshu • 日本酒',
       image: '/images/hero-utsuwa.jpg',
-      imageAlt:
-        'Tokkuri in ceramica artigianale e coppe ochoko su legno naturale',
+      imageAlt: 'Tokkuri e Ochoko in ceramica artigianale su legno naturale',
       blocks: [
         {
           label: '01 / HISTORIA',
           kanji: '歴',
-          title: 'Storia Sacra',
-          text: 'Nato come offerta rituale (omiki) agli spiriti della natura, si è trasformato in patrimonio gastronomico condiviso tra imperatori e contadini.',
+          title: 'Storia',
+          text: 'Un patrimonio culturale sviluppatosi attraverso oltre mille anni di storia.',
         },
         {
           label: '02 / ARTISAN',
           kanji: '技',
           title: 'Artigianato',
-          text: 'La figura del Tōji coordina una micro-società all’interno della cantina, orchestrando fermentazioni invernali al millimetro di grado.',
+          text: 'Conoscenze, precisione ed esperienza tramandate attraverso le generazioni.',
         },
         {
           label: '03 / TERROIR',
           kanji: '土',
           title: 'Territorio',
-          text: 'Dalle nevi del Tōhoku all’acqua calcarea di Nada: ogni fonte sorgiva conferisce una morbidezza e una limpidezza irripetibile.',
+          text: 'Un rapporto profondo tra ambiente, materie prime e tradizioni locali.',
         },
       ],
     },
 
     production: {
-      eyebrow: 'L’arte della produzione',
+      eyebrow: 'L’ARTE DELLA PRODUZIONE',
       title: ['Quattro elementi.', 'Un sapere straordinario.'],
       lead: [
-        'Ingredienti essenziali, tecniche precise e conoscenze tramandate nel tempo danno vita a una delle tradizioni produttive più affascinanti del Giappone.',
+        'Ingredienti essenziali, tecniche precise e conoscenze tramandate nel tempo danno vita a una delle tradizioni produttive più interessanti del Giappone.',
       ],
       elements: [
         {
           number: '01',
           kanji: '米',
-          title: 'Riso (Sakamai)',
-          text: 'La materia prima, selezionata e lavorata con cura. Solo il cuore ricco di amido (shinpaku) viene preservato tramite la sbramatura (seimai).',
+          title: 'Riso',
+          text: 'La materia prima, selezionata e lavorata con cura.',
         },
         {
           number: '02',
           kanji: '水',
-          title: 'Acqua (Mizu)',
-          text: 'Un elemento fondamentale che compone oltre l’80% del sakè. Filtrata naturalmente da montagne sacre, definisce dolcezza minerale o secchezza tagliente.',
+          title: 'Acqua',
+          text: 'Un elemento fondamentale che contribuisce alle caratteristiche del sakè.',
         },
         {
           number: '03',
           kanji: '麹',
-          title: 'Kōji (Kōji-kin)',
-          text: 'Un fungo microscopico inoculato sul riso cotto al vapore all’interno della camera calda (muro), vitale per convertire gli amidi in zuccheri fermentescibili.',
+          title: 'Kōji',
+          text: 'Un fungo coltivato sul riso, fondamentale per trasformarne l’amido in zuccheri.',
         },
         {
           number: '04',
           kanji: '酵',
-          title: 'Lieviti (Kōbo)',
-          text: 'Microrganismi nobili che trasformano gli zuccheri in alcol, donando il profilo aromatico: note floreali di mela (ginjō-ka) o sfumature terrose di umami.',
+          title: 'Lieviti',
+          text: 'Microrganismi che trasformano gli zuccheri in alcol durante la fermentazione.',
         },
       ],
       processTitle: 'Le principali fasi della produzione',
-      processNote: 'Flusso canonico',
+      processNote: 'Heiko Fukuhakkō — Fermentazione Parallela',
       steps: [
         {
           number: '01',
           title: 'Preparazione del riso',
-          text: 'Lucidatura & lavaggio',
+          text: 'Selezione, levigatura e lavaggio.',
         },
         {
           number: '02',
-          title: 'Cottura vapore',
-          text: 'Nel tino Koshiki',
+          title: 'Cottura',
+          text: 'Il riso viene cotto a vapore.',
         },
         {
           number: '03',
-          title: 'Kōji-zukuri',
-          text: 'Coltura in legno',
+          title: 'Preparazione del kōji',
+          text: 'Una parte del riso viene utilizzata per sviluppare il kōji.',
         },
         {
           number: '04',
           title: 'Fermentazione',
-          text: 'Mosto Moromi (30gg)',
+          text: 'Il lavoro di enzimi e lieviti permette la trasformazione degli amidi e degli zuccheri.',
         },
         {
           number: '05',
           title: 'Finitura',
-          text: 'Spremitura & affinamento',
+          text: 'Il sakè viene sottoposto alle lavorazioni finali, che possono includere pressatura, filtrazione, pastorizzazione e confezionamento.',
         },
       ],
       footnote:
-        '* Schema introduttivo e semplificato. Le tecniche e i passaggi possono variare sensibilmente in base ai metodi produttivi (es. Kimoto, Yamahai, Sokujō).',
-      sourcesLabel: 'Fonti & Istituzioni:',
+        '* Schema introduttivo e semplificato. Le tecniche e i passaggi possono variare in base ai metodi produttivi.',
+      sourcesLabel: 'Fonti e approfondimenti',
       sources: [
         'Japan Sake and Shochu Makers Association',
-        'National Research Institute of Brewing (NRIB)',
+        'National Research Institute of Brewing',
       ],
     },
 
     giappone: {
-      eyebrow: 'Cultura e territorio',
+      eyebrow: 'CULTURA E TERRITORIO',
       title: ['Ogni territorio racconta una storia.'],
       lead: [
-        'Dal nord innevato al sud temperato del Giappone, le tradizioni produttive riflettono il rapporto armonico tra ambiente, purezza dell’acqua e l’intuito dell’uomo.',
+        'Dal nord al sud del Giappone, le tradizioni produttive riflettono il rapporto tra ambiente, materie prime e conoscenze artigianali.',
       ],
       image: '/images/toji.jpg',
-      imageAlt:
-        'Maestro birraio tōji ispeziona il riso cotto a vapore in una kura giapponese',
-      captionTitle: '杜氏 (Tōji)',
-      captionText: 'Il maestro cantiniere custode dei segreti del lievito',
+      imageAlt: 'Maestro Tōji che esamina il riso fumante nei tini in legno',
+      captionTitle: 'FIG. 03 — 杜氏 TŌJI',
+      captionText: 'Il maestro birraio esamina a mano la consistenza del riso',
       boxes: [
         {
-          title: 'Le sorgenti e il riso locale',
-          text: 'Il concetto di jizake (sakè tipico locale) poggia sui terreni alluvionali e su varietà di riso autoctone nate per resistere al clima rigido delle montagne.',
+          title: 'Territorio e materie prime',
+          text: 'Le caratteristiche dell’acqua e le varietà di riso utilizzate contribuiscono alle scelte e alle tradizioni produttive delle diverse cantine.',
         },
         {
-          title: 'Il ciclo delle stagioni',
-          text: 'La produzione classica avviene rigorosamente in inverno (kan-zukuri), quando l’aria pura e le temperature rigide preservano naturalmente il mosto dai batteri indesiderati.',
+          title: 'Clima e ritmi produttivi',
+          text: 'Le condizioni climatiche e il susseguirsi delle stagioni hanno storicamente influenzato l’organizzazione della produzione.',
         },
         {
-          title: 'L’esperienza tramandata',
-          text: 'Le corporazioni storiche come la Gilda di Tanba o di Nambu mantengono una sensibilità tattile che nessun sensore digitale è ancora riuscito a replicare.',
+          title: 'Comunità e maestranze',
+          text: 'Le conoscenze artigianali vengono conservate, condivise e reinterpretate attraverso il lavoro delle persone e delle nuove generazioni.',
         },
       ],
     },
@@ -447,103 +441,120 @@ export const LANDING = {
     survey: {
       title: ['Quanto conosci il mondo del sakè?'],
       questions: [
-        { title: 'Hai mai sentito parlare del sakè giapponese?' },
         {
-          title: 'Quale profilo aromatico preferisci nelle bevande fermentate?',
+          title: 'Hai mai sentito parlare del sakè giapponese?',
+          options: [
+            { label: 'No, è la prima volta.', value: 'mai' },
+            { label: 'Sì, ma ne so pochissimo.', value: 'poco' },
+            { label: 'Sì, conosciamo già questo mondo.', value: 'conosci' },
+          ],
+        },
+        {
+          title: 'Quale aspetto ti incuriosisce maggiormente?',
+          options: [
+            { label: 'La storia e le tradizioni.', value: 'storia' },
+            { label: 'Come viene prodotto.', value: 'produzione' },
+            { label: 'Le regioni e i produttori.', value: 'regioni' },
+            {
+              label: 'Le caratteristiche e le classificazioni.',
+              value: 'classificazioni',
+            },
+          ],
         },
         {
           title:
-            'Hai mai degustato un sakè a temperatura controllata (caldo o freddo)?',
+            'Ti piacerebbe scoprire altri contenuti sulla cultura giapponese del sakè?',
+          options: [
+            { label: 'Sì, molto.', value: 'si' },
+            { label: 'Forse.', value: 'forse' },
+            { label: 'Non particolarmente.', value: 'no' },
+          ],
         },
-      ],
-      options: [
-        'No, è la prima volta',
-        'Sì, ma ne so pochissimo',
-        'Sì, conosco già questo mondo',
       ],
       skip: 'Salta questionario',
       next: 'Avanti',
-      completionTitle: 'Grazie per aver completato la profilazione.',
+      completionTitle: 'Grazie per aver partecipato!',
       completionText:
-        'Le tue risposte ci guideranno nella pubblicazione dei prossimi saggi e percorsi tematici.',
-      restart: 'Rivedi o ricompila',
+        'Il tuo contributo ci aiuta a capire quali storie e approfondimenti raccontare attraverso KURA.',
+      restart: 'Ricomincia questionario',
     },
 
     progetto: {
-      eyebrow: 'Il progetto Kura',
+      eyebrow: 'IL PROGETTO KURA',
       title: ['Raccontare il Giappone,', 'una storia alla volta.'],
       lead: [
-        'Una piattaforma editoriale indipendente nata per diffondere la cultura della fermentazione e il rispetto per i maestri artigiani dell’arcipelago.',
+        'KURA nasce dalla curiosità di esplorare e raccontare un patrimonio culturale ancora poco conosciuto in Italia. Progetto indipendente e privo di fini commerciali, KURA si impegna a rendere accessibile la straordinaria ricchezza della tradizione del sakè attraverso la voce degli artigiani, le memorie dei luoghi e la purezza delle materie prime.',
       ],
       pills: ['Cultura', 'Tradizione', 'Scoperta'],
       newsletterTitle: 'Il viaggio continua.',
       newsletterText:
-        'Ricevi saggi mensili, schede di degustazione e resoconti dai viaggi nelle prefetture.',
-      newsletterPlaceholder: 'Inserisci il tuo indirizzo email',
-      newsletterSubmit: 'Iscriviti',
+        'Ricevi approfondimenti editoriali, nuove storie e contenuti dedicati alla cultura giapponese. Nessuna promozione commerciale, solo cultura e documentazione.',
+      newsletterPlaceholder: 'La tua email',
+      newsletterSubmit: 'Resta aggiornato →',
       newsletterConsent: [
-        'Ho letto e accetto l’informativa sulla privacy. Nessun invio commerciale superfluo, solo approfondimenti culturali.',
+        'Accetto di ricevere comunicazioni editoriali e confermo di aver letto la ',
+        { link: 'Privacy Policy', href: '/privacy-policy' },
+        '.',
       ],
       newsletterFeedback:
-        'Benvenuto nella community di KURA. Riceverai presto il nostro primo resoconto sulle prefetture storiche.',
+        'Grazie! Ti abbiamo inviato una conferma alla tua email.',
     },
 
     footer: {
       tagline:
-        'Monografia e archivio culturale sul Nihonshu giapponese. Tra artigianalità ancestrale e contemplazione sensoriale.',
+        'Cultura, tradizione e territorio giapponese. Un progetto documentaristico ed editoriale dedicato all’arte del nihonshu.',
       groups: [
         {
           title: 'Archivio',
           links: [
-            { label: 'Guida alle Denominazioni', href: '#scopri' },
-            { label: 'Metodo Tradizionale Kimoto', href: '#produzione' },
-            { label: 'Mappa delle Prefetture', href: '#giappone' },
+            { label: 'Scopri il sakè', href: '#scopri' },
+            { label: 'Produzione', href: '#produzione' },
+            { label: 'Giappone', href: '#giappone' },
           ],
         },
         {
           title: 'Esperienza',
           links: [
-            { label: 'Questionario Sommelier', href: '#questionario' },
-            { label: 'Manifesto Curatoriale', href: '#progetto' },
-            { label: 'Terminologia Nihonshu', href: '#scopri' },
+            { label: 'Il progetto', href: '#progetto' },
+            { label: 'Privacy Policy', href: '/privacy-policy' },
+            { label: 'Cookie Policy', href: '/cookie-policy' },
           ],
         },
         {
-          title: 'Colophon',
-          text: 'Progetto culturale per sommelier e appassionati di cultura gastronomica giapponese.',
+          title: 'Note legali',
+          text: 'Progetto culturale indipendente. Nessun fine commerciale o vendita di prodotti.',
           place: 'Kyoto / Tokyo / Milano',
         },
       ],
-      copyright: 'KURA Nihonshu Cultural Project. Tutti i diritti riservati.',
-      signature: 'Shizukesa • Wabi • Artisanal Authority',
+      copyright: 'KURA. Tutti i diritti riservati.',
     },
   },
 
   mobile: {
     menu: [
-      { id: 'scopri', label: 'Cos’è il sakè', number: '01' },
+      { id: 'scopri', label: 'Scopri il sakè', number: '01' },
       { id: 'produzione', label: 'Produzione', number: '02' },
-      { id: 'giappone', label: 'Territorio & Tōji', number: '03' },
+      { id: 'giappone', label: 'Giappone', number: '03' },
       { id: 'questionario', label: 'Questionario', number: '04' },
-      { id: 'progetto', label: 'Il Progetto', number: '05' },
+      { id: 'progetto', label: 'Il progetto', number: '05' },
     ],
 
     hero: {
       badge: 'UN VIAGGIO NELLA CULTURA GIAPPONESE',
       title: ['Conosci davvero il sakè giapponese?'],
       lead: [
-        'Scopri un mondo fatto di tradizioni, artigiani, territori e conoscenze tramandate nel tempo. Un viaggio intimo attraverso una delle espressioni più autentiche dello spirito giapponese.',
+        'Scopri un mondo fatto di tradizioni, artigiani, territori e conoscenze tramandate nel tempo. Un viaggio attraverso una delle espressioni più affascinanti della cultura giapponese.',
       ],
       ctaPrimary: 'Inizia a scoprire',
       ctaSecondary: 'La sua storia',
       image: '/images/cantina-kura.jpg',
-      imageAlt: 'Antica kura tradizionale in legno con sugidama',
+      imageAlt: 'Antica cantina tradizionale con sfera sugidama in cedro',
       captionLabel: 'FIG. 01 — KURA',
-      captionNote: 'Takayama, Gifu',
+      captionNote: 'Antica cantina tradizionale con sfera sugidama in cedro',
     },
 
     scopri: {
-      eyebrow: 'Alla scoperta del sakè',
+      eyebrow: 'ALLA SCOPERTA DEL SAKÈ',
       title: ['Molto più di una bevanda. Una storia millenaria.'],
       lead: [
         'Il sakè, conosciuto in Giappone come ',
@@ -554,59 +565,59 @@ export const LANDING = {
         'La sua storia è profondamente intrecciata con quella del Giappone: dalle tradizioni religiose alle conoscenze artigianali tramandate attraverso le generazioni.',
       ],
       image: '/images/hero-utsuwa.jpg',
-      imageAlt: 'Caraffa tokkuri e coppe ochoko artigianali su legno',
-      captionLabel: 'FIG. 02 — VASSOIO DA SERVIZIO',
-      captionNote: 'Tokkuri e Ochoko',
+      imageAlt: 'Tokkuri e Ochoko in ceramica artigianale su legno naturale',
+      captionLabel: 'FIG. 02 — 器 UTSUWA',
+      captionNote: 'Caraffa tokkuri e coppe ochoko su legno d’epoca',
       facts: [
         {
-          title: 'Storia e Radici Sacre',
+          title: 'Storia',
           text: 'Un patrimonio culturale sviluppatosi attraverso oltre mille anni di storia.',
         },
         {
-          title: 'Artigianato Millenario',
+          title: 'Artigianato',
           text: 'Conoscenze, precisione ed esperienza tramandate attraverso le generazioni.',
         },
         {
-          title: 'Territorio e Purezza',
+          title: 'Territorio',
           text: 'Un rapporto profondo tra ambiente, materie prime e tradizioni locali.',
         },
       ],
     },
 
     production: {
-      eyebrow: 'L’arte della produzione',
+      eyebrow: 'L’ARTE DELLA PRODUZIONE',
       title: ['Quattro elementi. Un sapere straordinario.'],
       lead: [
-        'La complessa limpidezza di gusto nasce dal dialogo armonico tra quattro ingredienti naturali elementari.',
+        'Ingredienti essenziali, tecniche precise e conoscenze tramandate nel tempo danno vita a una delle tradizioni produttive più interessanti del Giappone.',
       ],
       elements: [
         {
           number: '01',
           icon: 'grain',
-          title: 'Riso (Sakamai)',
+          title: 'Riso',
           text: 'La materia prima, selezionata e lavorata con cura.',
         },
         {
           number: '02',
           icon: 'water_drop',
-          title: 'Acqua (Mizu)',
+          title: 'Acqua',
           text: 'Un elemento fondamentale che contribuisce alle caratteristiche del sakè.',
         },
         {
           number: '03',
           icon: 'spa',
-          title: 'Kōji-kin',
+          title: 'Kōji',
           text: 'Un fungo coltivato sul riso, fondamentale per trasformarne l’amido in zuccheri.',
         },
         {
           number: '04',
           icon: 'bubble_chart',
-          title: 'Lieviti (Kōbo)',
+          title: 'Lieviti',
           text: 'Microrganismi che trasformano gli zuccheri in alcol durante la fermentazione.',
         },
       ],
       processTitle: 'Le principali fasi della produzione',
-      processNote: '5 Fasi',
+      processNote: 'Heiko Fukuhakkō — Fermentazione Parallela',
       steps: [
         {
           number: '1',
@@ -640,11 +651,11 @@ export const LANDING = {
         },
       ],
       footnote:
-        'Schema introduttivo e semplificato. Le tecniche e i passaggi possono variare in base ai metodi produttivi.',
+        '* Schema introduttivo e semplificato. Le tecniche e i passaggi possono variare in base ai metodi produttivi.',
     },
 
     giappone: {
-      eyebrow: 'Cultura e territorio',
+      eyebrow: 'CULTURA E TERRITORIO',
       title: ['Ogni territorio racconta una storia.'],
       lead: [
         'Dal nord al sud del Giappone, le tradizioni produttive riflettono il rapporto tra ambiente, materie prime e conoscenze artigianali.',
@@ -653,31 +664,30 @@ export const LANDING = {
         'Ogni regione custodisce storie di persone, comunità e tecniche sviluppate nel corso delle generazioni.',
       ],
       image: '/images/toji.jpg',
-      imageAlt:
-        'Il mastro Tōji che ispeziona il riso fumante nei tini di legno',
-      captionLabel: 'FIG. 03 — IL MASTRO TŌJI',
-      captionNote: '杜氏 (Tōji)',
+      imageAlt: 'Maestro Tōji che esamina il riso fumante nei tini in legno',
+      captionLabel: 'FIG. 03 — 杜氏 TŌJI',
+      captionNote: 'Il maestro birraio esamina a mano la consistenza del riso',
       boxes: [
         {
-          title: 'Le sorgenti e il riso locale',
+          title: 'Territorio e materie prime',
           text: 'Le caratteristiche dell’acqua e le varietà di riso utilizzate contribuiscono alle scelte e alle tradizioni produttive delle diverse cantine.',
         },
         {
-          title: 'Il ciclo delle stagioni',
+          title: 'Clima e ritmi produttivi',
           text: 'Le condizioni climatiche e il susseguirsi delle stagioni hanno storicamente influenzato l’organizzazione della produzione.',
         },
         {
-          title: 'L’esperienza tramandata',
+          title: 'Comunità e maestranze',
           text: 'Le conoscenze artigianali vengono conservate, condivise e reinterpretate attraverso il lavoro delle persone e delle nuove generazioni.',
         },
       ],
     },
 
     survey: {
-      eyebrow: 'Partecipa al progetto',
+      eyebrow: 'PARTECIPA AL PROGETTO',
       title: ['Quanto conosci il mondo del sakè?'],
       lead: [
-        'Bastano tre semplici risposte per aiutarci a costruire percorsi di scoperta più vicini alle tue curiosità.',
+        'Stiamo esplorando quanto sia conosciuta in Italia la cultura del sakè giapponese. Rispondi a tre semplici domande e aiutaci a capire quali aspetti suscitano maggiore curiosità.',
       ],
       questions: [
         {
@@ -685,30 +695,30 @@ export const LANDING = {
           title: 'Hai mai sentito parlare del sakè giapponese?',
           options: [
             { label: 'No, è la prima volta.', value: 'mai' },
-            { label: 'Sì, ma ne so pochissimo.', value: 'poco' },
-            { label: 'Sì, conosco già questo mondo.', value: 'conosci' },
+            { label: 'Sì, ma ne so pochissimo.', value: 'poco', strong: true },
+            { label: 'Sì, conosciamo già questo mondo.', value: 'conosci' },
           ],
         },
         {
           id: 'q2',
           title: 'Quale aspetto ti incuriosisce maggiormente?',
           options: [
-            { label: 'La storia e le tradizioni rituali.', value: 'storia' },
-            { label: 'Come viene prodotto e fermentato.', value: 'produzione' },
-            { label: 'Le regioni e le antiche cantine.', value: 'regioni' },
+            { label: 'La storia e le tradizioni.', value: 'storia' },
+            { label: 'Come viene prodotto.', value: 'produzione' },
+            { label: 'Le regioni e i produttori.', value: 'regioni' },
             {
-              label: 'Abbinamenti gastronomici e calici.',
-              value: 'abbinamenti',
+              label: 'Le caratteristiche e le classificazioni.',
+              value: 'classificazioni',
             },
           ],
         },
         {
           id: 'q3',
           title:
-            'Ti piacerebbe scoprire altri contenuti sulla cultura del sakè?',
+            'Ti piacerebbe scoprire altri contenuti sulla cultura giapponese del sakè?',
           options: [
-            { label: 'Sì, desidero approfondire.', value: 'molto' },
-            { label: 'Forse, occasionalmente.', value: 'forse' },
+            { label: 'Sì, molto.', value: 'si' },
+            { label: 'Forse.', value: 'forse' },
             { label: 'Non particolarmente.', value: 'no' },
           ],
         },
@@ -716,46 +726,49 @@ export const LANDING = {
       skip: 'Salta questionario',
       back: '← Indietro',
       next: 'Avanti',
-      submit: 'Completa',
-      completionTitle: 'Grazie per esserti unito al viaggio!',
+      submit: 'Invia risposte',
+      completionTitle: 'Grazie per aver partecipato!',
       completionText:
-        'Le tue risposte ci guideranno nella pubblicazione dei prossimi saggi e percorsi tematici.',
-      restart: 'Rivedi o ricompila',
+        'Il tuo contributo ci aiuta a capire quali storie e approfondimenti raccontare attraverso KURA.',
+      restart: 'Ricomincia questionario',
     },
 
     progetto: {
-      eyebrow: 'Il progetto KURA',
+      eyebrow: 'IL PROGETTO KURA',
       title: ['Raccontare il Giappone, una storia alla volta.'],
       lead: [
-        'KURA nasce come iniziativa editoriale indipendente e no-profit per divulgare in Italia la vera cultura del sakè artigianale, superando i cliché occidentali per dare voce ai maestri e ai territori.',
+        'KURA nasce dalla curiosità di esplorare e raccontare un patrimonio culturale ancora poco conosciuto in Italia. Progetto indipendente e privo di fini commerciali, KURA si impegna a rendere accessibile la straordinaria ricchezza della tradizione del sakè attraverso la voce degli artigiani, le memorie dei luoghi e la purezza delle materie prime.',
       ],
       pillars: [
         {
           icon: 'auto_stories',
           title: 'Cultura',
-          text: 'Approfondimenti storici, rituali shintoisti e saggi monografici senza filtri commerciali.',
+          text: 'Conoscere la storia e le tradizioni millenarie del sakè.',
         },
         {
           icon: 'handyman',
           title: 'Tradizione',
-          text: 'Il rispetto rigoroso per il lavoro dei mastri Tōji e delle antiche cantine a conduzione familiare.',
+          text: 'Raccontare il sapere tramandato dei maestri artigiani.',
         },
         {
           icon: 'explore',
           title: 'Scoperta',
-          text: 'Mappe territoriali, guide alla degustazione consapevole e itinerari tra le prefetture meno note.',
+          text: 'Esplorare territori, sorgenti e storie del Giappone.',
         },
       ],
-      newsletterLabel: 'La corrispondenza',
+      newsletterLabel: 'COMMUNITY & NEWSLETTER',
       newsletterTitle: 'Il viaggio continua.',
       newsletterText:
-        'Iscriviti per ricevere quaderni culturali inediti, interviste ai produttori e anteprime delle nostre pubblicazioni.',
-      newsletterPlaceholder: 'Il tuo indirizzo email',
+        'Ricevi approfondimenti editoriali, nuove storie e contenuti dedicati alla cultura giapponese. Nessuna promozione commerciale, solo cultura e documentazione.',
+      newsletterPlaceholder: 'La tua email',
       newsletterSubmit: 'Resta aggiornato →',
       newsletterConsent: [
-        'Accetto l’informativa sulla privacy per la ricezione delle comunicazioni culturali.',
+        'Accetto di ricevere comunicazioni editoriali e confermo di aver letto la ',
+        { link: 'Privacy Policy', href: '/privacy-policy' },
+        '.',
       ],
-      newsletterFeedback: 'Grazie per esserti unito al viaggio!',
+      newsletterFeedback:
+        'Grazie! Ti abbiamo inviato una conferma alla tua email.',
     },
 
     sources: {
@@ -774,17 +787,18 @@ export const LANDING = {
     },
 
     footer: {
-      tagline: 'Cultura, tradizione e territorio giapponese.',
+      tagline:
+        'Cultura, tradizione e territorio giapponese. Un progetto documentaristico ed editoriale dedicato all’arte del nihonshu.',
       links: [
-        { id: 'scopri', label: 'Cos’è il sakè', href: '#scopri' },
+        { id: 'scopri', label: 'Scopri il sakè', href: '#scopri' },
         { id: 'produzione', label: 'Produzione', href: '#produzione' },
-        { id: 'giappone', label: 'Territorio', href: '#giappone' },
-        { id: 'questionario', label: 'Questionario', href: '#questionario' },
-        { id: 'progetto', label: 'Il Progetto', href: '#progetto' },
-        { id: 'note', label: 'Note Legali', href: '#note-legali' },
+        { id: 'giappone', label: 'Giappone', href: '#giappone' },
+        { id: 'progetto', label: 'Il progetto', href: '#progetto' },
+        { id: 'privacy', label: 'Privacy Policy', href: '/privacy-policy' },
+        { id: 'cookie', label: 'Cookie Policy', href: '/cookie-policy' },
       ],
-      copyright: 'KURA Rivista Culturale.',
-      note: 'Tutti i diritti riservati. Progetto editoriale no-profit.',
+      copyright: 'KURA. Tutti i diritti riservati.',
+      note: 'Progetto culturale indipendente. Nessun fine commerciale o vendita di prodotti.',
     },
   },
 };

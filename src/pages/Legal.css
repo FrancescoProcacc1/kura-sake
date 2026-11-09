@@ -1,0 +1,80 @@
+/* Pagina legale condivisa (Privacy Policy, Cookie Policy).
+   Corpo unico responsive: la cornice dipende dalla viewport. */
+
+.legal__back {
+  margin-top: 1.5rem;
+}
+
+.legal__back a {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-gray);
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.legal__back a:hover {
+  color: var(--color-accent);
+}
+
+.legal__title {
+  margin-top: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  color: var(--color-charcoal);
+}
+
+.legal__updated {
+  margin-top: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+
+.legal__intro {
+  margin-top: 1.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--color-gray);
+}
+
+.legal__section {
+  margin-top: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.legal__section:last-child {
+  border-bottom: none;
+}
+
+.legal__section-title {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--color-charcoal);
+}
+
+.legal__paragraph {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-charcoal);
+}
+
+.legal__paragraph + .legal__paragraph {
+  margin-top: 0.75rem;
+}

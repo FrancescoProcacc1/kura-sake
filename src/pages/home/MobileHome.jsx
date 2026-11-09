@@ -275,7 +275,7 @@ function MobileHome() {
                   type="checkbox"
                 />
                 <span className="mobile-newsletter__consent-text">
-                  {progetto.newsletterConsent[0]}
+                  <RichText segments={progetto.newsletterConsent} />
                 </span>
               </label>
             </form>

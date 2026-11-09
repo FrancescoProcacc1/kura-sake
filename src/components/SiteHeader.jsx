@@ -25,12 +25,16 @@ const NAV_IDS = NAV_LINKS.map((link) => link.id);
 // superiore (cfr. scroll-padding-top in index.css).
 const HEADER_OFFSET = 80;
 
-function useActiveSection() {
+function useActiveSection(enabled) {
   const [activeId, setActiveId] = useState(null);
   const lockRef = useRef(null);
   const frameRef = useRef(null);
 
   useEffect(() => {
+    // Fuori dalla home lo scroll-spy è disattivato: le sezioni con id
+    // coincidenti (es. la pagina storia) non devono attivare il menu.
+    if (!enabled) return undefined;
+
     const update = () => {
       const lock = lockRef.current;
       if (lock) {
@@ -70,9 +74,10 @@ function useActiveSection() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-  }, []);
+  }, [enabled]);
 
   const activate = (id) => {
+    if (!enabled) return;
     lockRef.current = { id, until: Date.now() + 2000 };
     setActiveId(id);
   };
@@ -81,12 +86,14 @@ function useActiveSection() {
 }
 
 function SiteHeader() {
-  const [activeId, activate] = useActiveSection();
   const { pathname } = useLocation();
 
-  // Dalla landing le ancorie restano interne; dalle altre pagine devono
+  // Dalla landing le ancore restano interne; dalle altre pagine devono
   // puntare alla radice per raggiungere le sezioni della monografia.
   const prefix = pathname === '/' ? '' : '/';
+  const isHome = pathname === '/';
+
+  const [activeId, activate] = useActiveSection(isHome);
 
   return (
     <header className="site-header">
@@ -102,7 +109,7 @@ function SiteHeader() {
 
         <nav className="site-header__nav">
           {NAV_LINKS.map((link) => {
-            const isActive = link.id === activeId;
+            const isActive = isHome && link.id === activeId;
 
             return (
               <a

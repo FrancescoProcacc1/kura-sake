@@ -306,7 +306,7 @@ function TabletHome() {
                     type="checkbox"
                   />
                   <span className="t-body-sm tablet-newsletter__consent-text">
-                    {progetto.newsletterConsent[0]}
+                    <RichText segments={progetto.newsletterConsent} />
                   </span>
                 </label>
               </form>

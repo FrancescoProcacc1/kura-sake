@@ -60,20 +60,20 @@ function TabletSurvey() {
             </div>
 
             <div className="tablet-survey__options">
-              {survey.options.map((option, index) => {
+              {question.options.map((option, index) => {
                 const isSelected = selected === index;
 
                 return (
                   <button
                     className={`tablet-survey__option${isSelected ? ' tablet-survey__option--selected' : ''}`}
-                    key={option}
+                    key={option.value}
                     onClick={() => setSelected(index)}
                     type="button"
                   >
                     <span
                       className={`t-body-md tablet-survey__option-text${isSelected ? ' tablet-survey__option-text--selected' : ''}`}
                     >
-                      {option}
+                      {option.label}
                     </span>
                     <span
                       className={`tablet-survey__marker${isSelected ? ' tablet-survey__marker--selected' : ''}`}

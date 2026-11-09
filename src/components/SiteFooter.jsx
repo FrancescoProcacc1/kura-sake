@@ -1,11 +1,27 @@
 import './SiteFooter.css';
 
+import { Link } from 'react-router-dom';
+
 import { LANDING } from '../content/landing.js';
 
 const footer = LANDING.desktop.footer;
 const FOOTER_LINKS = footer.links;
 
 const CURRENT_YEAR = new Date().getFullYear();
+
+function FooterLink({ link }) {
+  const isRoute = link.href.startsWith('/');
+
+  return isRoute ? (
+    <Link className="site-footer__link" to={link.href}>
+      {link.label}
+    </Link>
+  ) : (
+    <a className="site-footer__link" href={link.href}>
+      {link.label}
+    </a>
+  );
+}
 
 function SiteFooter() {
   return (
@@ -22,9 +38,7 @@ function SiteFooter() {
 
           <nav className="site-footer__nav">
             {FOOTER_LINKS.map((link) => (
-              <a className="site-footer__link" href={link.href} key={link.id}>
-                {link.label}
-              </a>
+              <FooterLink key={link.id} link={link} />
             ))}
           </nav>
         </div>
