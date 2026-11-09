@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './SiteHeader.css';
 
@@ -98,14 +98,14 @@ function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__inner shell">
-        <a className="site-header__logo" href="#">
+        <Link className="site-header__logo" to="/">
           <span className="site-header__wordmark">KURA</span>
           <span className="site-header__kanji">酒</span>
           <span className="site-header__separator" />
           <span className="site-header__tagline">
             Cultura, tradizione e territorio giapponese
           </span>
-        </a>
+        </Link>
 
         <nav className="site-header__nav">
           {NAV_LINKS.map((link) => {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './MobileHeader.css';
 import './MobileMenu.css';
@@ -13,10 +14,10 @@ function MobileHeader() {
     <>
       <header className="mobile-header">
         <div className="mobile-header__inner">
-          <a className="mobile-header__brand" href="#">
+          <Link className="mobile-header__brand" to="/">
             <span className="mobile-header__wordmark">KURA</span>
             <span className="mobile-header__kanji">酒</span>
-          </a>
+          </Link>
 
           <button
             aria-expanded={menuOpen}
