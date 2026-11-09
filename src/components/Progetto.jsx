@@ -4,6 +4,8 @@ import './Progetto.css';
 
 import { LANDING } from '../content/landing.js';
 
+import { postToSheet } from '../config.js';
+
 import Icon from './Icon.jsx';
 import RichText from './RichText.jsx';
 
@@ -18,6 +20,8 @@ function Progetto() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const email = new FormData(event.currentTarget).get('email');
+    postToSheet({ type: 'newsletter', email, consent: true });
     setSubscribed(true);
     event.currentTarget.reset();
     clearTimeout(timeoutRef.current);
@@ -75,8 +79,11 @@ function Progetto() {
                 <input
                   className="progetto__newsletter-input"
                   id="nl-email-input"
+                  name="email"
+                  pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}"
                   placeholder={progetto.newsletterPlaceholder}
                   required
+                  title="Inserisci un'email completa, es. nome@esempio.it"
                   type="email"
                 />
                 <button className="progetto__newsletter-submit" type="submit">

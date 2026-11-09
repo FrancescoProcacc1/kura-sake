@@ -5,6 +5,8 @@ import './TabletTheme.css';
 
 import { LANDING } from '../../content/landing.js';
 
+import { postToSheet } from '../../config.js';
+
 const survey = LANDING.tablet.survey;
 
 const TOTAL_STEPS = survey.questions.length;
@@ -12,23 +14,31 @@ const TOTAL_STEPS = survey.questions.length;
 function TabletSurvey() {
   const [step, setStep] = useState(1);
   const [selected, setSelected] = useState(1);
+  const [answers, setAnswers] = useState({});
   const [completed, setCompleted] = useState(false);
 
   const percentage = Math.round((step / TOTAL_STEPS) * 100);
   const progress = `${(step / TOTAL_STEPS) * 100}%`;
   const question = survey.questions[step - 1];
 
+  const choose = (index, value) => {
+    setSelected(index);
+    setAnswers((previous) => ({ ...previous, [`q${step}`]: value }));
+  };
+
   const next = () => {
     if (step < TOTAL_STEPS) {
       setStep(step + 1);
       return;
     }
+    postToSheet({ type: 'survey', ...answers });
     setCompleted(true);
   };
 
   const restart = () => {
     setStep(1);
     setSelected(1);
+    setAnswers({});
     setCompleted(false);
   };
 
@@ -67,7 +77,7 @@ function TabletSurvey() {
                   <button
                     className={`tablet-survey__option${isSelected ? ' tablet-survey__option--selected' : ''}`}
                     key={option.value}
-                    onClick={() => setSelected(index)}
+                    onClick={() => choose(index, option.value)}
                     type="button"
                   >
                     <span

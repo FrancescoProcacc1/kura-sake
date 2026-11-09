@@ -5,6 +5,8 @@ import './MobileHome.css';
 
 import { LANDING } from '../../content/landing.js';
 
+import { postToSheet } from '../../config.js';
+
 import Icon from '../../components/Icon.jsx';
 import RichText from '../../components/RichText.jsx';
 import MobileFooter from '../../components/mobile/MobileFooter.jsx';
@@ -24,6 +26,8 @@ function MobileHome() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const email = new FormData(event.currentTarget).get('email');
+    postToSheet({ type: 'newsletter', email, consent: true });
     setSubscribed(true);
     event.currentTarget.reset();
   };
@@ -259,8 +263,11 @@ function MobileHome() {
             <form className="mobile-newsletter__form" onSubmit={handleSubmit}>
               <input
                 className="mobile-newsletter__input"
+                name="email"
+                pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}"
                 placeholder={progetto.newsletterPlaceholder}
                 required
+                title="Inserisci un'email completa, es. nome@esempio.it"
                 type="email"
               />
               <button className="mobile-newsletter__submit" type="submit">

@@ -4,6 +4,8 @@ import './Questionario.css';
 
 import { LANDING } from '../content/landing.js';
 
+import { postToSheet } from '../config.js';
+
 import Icon from './Icon.jsx';
 
 const survey = LANDING.desktop.survey;
@@ -11,19 +13,6 @@ const QUESTIONS = survey.questions;
 
 const TOTAL_STEPS = QUESTIONS.length;
 const DEFAULT_ANSWERS = { q1: 'poco' };
-
-const SURVEY_ENDPOINT = import.meta.env.VITE_SURVEY_ENDPOINT;
-
-const submitSurvey = (answers) => {
-  if (!SURVEY_ENDPOINT) return;
-
-  fetch(SURVEY_ENDPOINT, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify(answers),
-  }).catch(() => {});
-};
 
 function Questionario() {
   const [step, setStep] = useState(1);
@@ -45,7 +34,7 @@ function Questionario() {
   };
 
   const complete = () => {
-    submitSurvey(answers);
+    postToSheet({ type: 'survey', ...answers });
     setCompleted(true);
   };
 

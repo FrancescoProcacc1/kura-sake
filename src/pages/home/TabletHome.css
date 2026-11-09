@@ -637,3 +637,8 @@
   margin-top: 0.25rem;
   accent-color: var(--t-primary);
 }
+
+.tablet-newsletter__feedback {
+  margin: 0;
+  color: var(--t-primary);
+}

@@ -4,6 +4,8 @@ import './MobileSurvey.css';
 
 import { LANDING } from '../../content/landing.js';
 
+import { postToSheet } from '../../config.js';
+
 import Icon from '../Icon.jsx';
 
 const survey = LANDING.mobile.survey;
@@ -33,6 +35,7 @@ function MobileSurvey() {
 
   const next = () => {
     if (isLastStep) {
+      postToSheet({ type: 'survey', ...answers });
       setCompleted(true);
       return;
     }

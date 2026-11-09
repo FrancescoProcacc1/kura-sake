@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import './TabletHome.css';
 
 import { LANDING } from '../../content/landing.js';
+
+import { postToSheet } from '../../config.js';
 
 import RichText, { Lines } from '../../components/RichText.jsx';
 import SiteHeader from '../../components/SiteHeader.jsx';
@@ -17,6 +20,15 @@ const progetto = LANDING.tablet.progetto;
 
 function TabletHome() {
   const { pathname } = useLocation();
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const email = new FormData(event.currentTarget).get('email');
+    postToSheet({ type: 'newsletter', email, consent: true });
+    setSubscribed(true);
+    event.currentTarget.reset();
+  };
 
   return (
     <>
@@ -283,12 +295,18 @@ function TabletHome() {
                 <p className="t-body-sm">{progetto.newsletterText}</p>
               </div>
 
-              <form className="tablet-newsletter__form">
+              <form
+                className="tablet-newsletter__form"
+                onSubmit={handleSubmit}
+              >
                 <div className="tablet-newsletter__row">
                   <input
                     className="t-body-md tablet-newsletter__input"
+                    name="email"
+                    pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}"
                     placeholder={progetto.newsletterPlaceholder}
                     required
+                    title="Inserisci un'email completa, es. nome@esempio.it"
                     type="email"
                   />
                   <button
@@ -310,6 +328,12 @@ function TabletHome() {
                   </span>
                 </label>
               </form>
+
+              {subscribed ? (
+                <p className="t-body-sm tablet-newsletter__feedback">
+                  {progetto.newsletterFeedback}
+                </p>
+              ) : null}
             </div>
           </section>
         </div>
