@@ -12,6 +12,19 @@ const QUESTIONS = survey.questions;
 const TOTAL_STEPS = QUESTIONS.length;
 const DEFAULT_ANSWERS = { q1: 'poco' };
 
+const SURVEY_ENDPOINT = import.meta.env.VITE_SURVEY_ENDPOINT;
+
+const submitSurvey = (answers) => {
+  if (!SURVEY_ENDPOINT) return;
+
+  fetch(SURVEY_ENDPOINT, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(answers),
+  }).catch(() => {});
+};
+
 function Questionario() {
   const [step, setStep] = useState(1);
   const [answers, setAnswers] = useState(DEFAULT_ANSWERS);
@@ -29,6 +42,11 @@ function Questionario() {
     setAnswers(DEFAULT_ANSWERS);
     setCompleted(false);
     setStep(1);
+  };
+
+  const complete = () => {
+    submitSurvey(answers);
+    setCompleted(true);
   };
 
   return (
@@ -128,7 +146,7 @@ function Questionario() {
                     ) : (
                       <button
                         className="questionario__next"
-                        onClick={() => setCompleted(true)}
+                        onClick={complete}
                         type="button"
                       >
                         {survey.submit}
