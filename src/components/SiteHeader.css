@@ -1,0 +1,188 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 5rem;
+  border-bottom: 1px solid var(--color-border);
+  background-color: color-mix(in srgb, var(--color-bg) 95%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/*
+ * Fallback: senza backdrop-filter il contenuto che scorre sotto la barra
+ * resterebbe visibile attraverso lo sfondo semitrasparente, quindi in quel
+ * caso si usa uno sfondo pieno.
+ */
+@supports not (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+  .site-header {
+    background-color: var(--color-bg);
+  }
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+}
+
+.site-header__logo:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.site-header__wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  color: var(--color-charcoal);
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.site-header__logo:hover .site-header__wordmark {
+  color: var(--color-accent);
+}
+
+.site-header__kanji {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 300;
+  color: var(--color-accent);
+}
+
+.site-header__separator {
+  display: none;
+  width: 1px;
+  height: 0.875rem;
+  margin-left: 0.5rem;
+  background-color: var(--color-border);
+}
+
+/* Il separatore e il tagline compaiono solo quando c'è spazio: sotto i
+   1280px il menu comprimerbbe il testo su più righe. */
+@media (width >= 80rem) {
+  .site-header__separator {
+    display: inline-block;
+  }
+}
+
+.site-header__tagline {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+
+@media (width >= 80rem) {
+  .site-header__tagline {
+    display: inline-block;
+  }
+}
+
+.site-header__nav {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (width >= 48rem) {
+  .site-header__nav {
+    display: flex;
+  }
+}
+
+@media (width >= 64rem) {
+  .site-header__nav {
+    gap: 2.5rem;
+  }
+}
+
+.site-header__link {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Underline rosso della voce attiva: cresce da sinistra. */
+.site-header__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 240ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-header__link--active::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header__link::after {
+    transition: none;
+  }
+}
+
+.site-header__link:hover {
+  color: var(--color-charcoal);
+}
+
+.site-header__account {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.site-header__cta:hover {
+  color: var(--color-accent-hover);
+}
+
+.site-header__cta-icon {
+  font-size: 16px;
+}

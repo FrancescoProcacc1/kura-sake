@@ -1,0 +1,118 @@
+/*
+ * Token e scala tipografica della variante tablet (design system Material 3).
+ * I nomi sono prefissati con --t- per non entrare in conflitto con i token
+ * della landing desktop (--color-*).
+ */
+:root {
+  --t-surface: #fbf9f4;
+  --t-on-surface: #1b1c19;
+  --t-on-surface-variant: #58413f;
+  --t-primary: #840f16;
+  --t-primary-container: #a52a2a;
+  --t-on-primary: #ffffff;
+  --t-outline: #8c716e;
+  --t-outline-variant: #e0bfbc;
+  --t-surface-container-lowest: #ffffff;
+  --t-surface-container-low: #f5f3ee;
+  --t-surface-container: #f0eee9;
+  --t-surface-container-high: #eae8e3;
+  --t-surface-container-highest: #e4e2dd;
+  --t-surface-dim: #dbdad5;
+  --t-surface-bright: #fbf9f4;
+  --t-secondary-fixed-dim: #ffb3ad;
+  --t-inverse-surface: #30312e;
+
+  --t-space-xs: 0.25rem;
+  --t-space-sm: 0.5rem;
+  --t-space-md: 1rem;
+  --t-space-lg: 1.75rem;
+  --t-space-xl: 3rem;
+
+  --t-display: 56px;
+  --t-headline-lg: 40px;
+  --t-headline-md: 28px;
+  --t-headline-sm: 20px;
+  --t-body-lg: 18px;
+  --t-body-md: 15px;
+  --t-body-sm: 13px;
+  --t-label-md: 12px;
+  --t-label-sm: 11px;
+}
+
+.t-display,
+.t-headline-lg,
+.t-headline-md,
+.t-headline-sm {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--t-on-surface);
+}
+
+.t-display {
+  font-size: var(--t-display);
+  line-height: 1.214;
+  letter-spacing: -0.02em;
+}
+
+.t-headline-lg {
+  font-size: var(--t-headline-lg);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.t-headline-md {
+  font-size: var(--t-headline-md);
+  line-height: 1.357;
+}
+
+.t-headline-sm {
+  font-size: var(--t-headline-sm);
+  line-height: 1.4;
+}
+
+.t-body-lg,
+.t-body-md,
+.t-body-sm,
+.t-label-md,
+.t-label-sm {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+.t-body-lg {
+  font-size: var(--t-body-lg);
+  line-height: 1.667;
+  color: var(--t-on-surface-variant);
+}
+
+.t-body-md {
+  font-size: var(--t-body-md);
+  line-height: 1.6;
+  color: var(--t-on-surface-variant);
+}
+
+.t-body-sm {
+  font-size: var(--t-body-sm);
+  line-height: 1.538;
+  color: var(--t-on-surface-variant);
+}
+
+.t-label-md {
+  font-size: var(--t-label-md);
+  line-height: 1.333;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.t-label-sm {
+  font-size: var(--t-label-sm);
+  line-height: 1.273;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.t-mono {
+  font-family: ui-monospace, 'SFMono-Regular', 'Cascadia Mono', monospace;
+  font-size: var(--t-label-sm);
+  letter-spacing: 0.04em;
+}
