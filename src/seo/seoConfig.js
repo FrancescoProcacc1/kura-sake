@@ -2,7 +2,7 @@ import { STORIA } from '../content/storia.js';
 
 export const SITE = {
   name: 'KURA',
-  url: 'https://www.kura-sake.it',
+  url: 'https://kurasake.it',
   locale: 'it_IT',
   ogImage: '/og-image.jpg',
   ogImageAlt: 'Il kanji 蔵 (kura), logo di KURA',
