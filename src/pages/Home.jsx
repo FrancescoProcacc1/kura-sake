@@ -1,4 +1,5 @@
 import { useMediaQuery } from '../hooks/useMediaQuery.js';
+import { useSeo } from '../seo/useSeo.js';
 
 import DesktopHome from './home/DesktopHome.jsx';
 import MobileHome from './home/MobileHome.jsx';
@@ -14,6 +15,7 @@ const MOBILE_QUERY = '(max-width: 767px)';
 const TABLET_QUERY = '(min-width: 768px) and (max-width: 1279px)';
 
 function Home() {
+  useSeo('/');
   const isMobile = useMediaQuery(MOBILE_QUERY);
   const isTablet = useMediaQuery(TABLET_QUERY);
 

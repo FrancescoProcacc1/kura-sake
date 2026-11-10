@@ -1,9 +1,9 @@
 import './Legal.css';
 
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMediaQuery } from '../hooks/useMediaQuery.js';
+import { useSeo } from '../seo/useSeo.js';
 import { LEGAL } from '../content/legal.js';
 import MobileFooter from '../components/mobile/MobileFooter.jsx';
 import MobileHeader from '../components/mobile/MobileHeader.jsx';
@@ -37,14 +37,6 @@ function MobileChrome({ children }) {
 }
 
 function LegalBody({ doc }) {
-  useEffect(() => {
-    const previous = document.title;
-    document.title = `${doc.title} | KURA`;
-    return () => {
-      document.title = previous;
-    };
-  }, [doc]);
-
   return (
     <article className="legal">
       <nav className="legal__back">
@@ -59,7 +51,10 @@ function LegalBody({ doc }) {
         <section className="legal__section" key={section.title}>
           <h2 className="legal__section-title">{section.title}</h2>
           {section.paragraphs.map((paragraph, index) => (
-            <p className="legal__paragraph" key={paragraph.slice(0, 24) + index}>
+            <p
+              className="legal__paragraph"
+              key={paragraph.slice(0, 24) + index}
+            >
               {paragraph}
             </p>
           ))}
@@ -86,9 +81,11 @@ function Legal({ doc }) {
 }
 
 export function LegalPrivacy() {
+  useSeo('/privacy-policy');
   return <Legal doc={LEGAL.privacy} />;
 }
 
 export function LegalCookie() {
+  useSeo('/cookie-policy');
   return <Legal doc={LEGAL.cookie} />;
 }
