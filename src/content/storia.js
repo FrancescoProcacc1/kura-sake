@@ -12,7 +12,7 @@ export const STORIA = {
       eyebrow: 'STORIA E TRADIZIONE',
       title: 'Una storia lunga oltre mille anni.',
       lead: 'Dalle antiche testimonianze del Giappone alle cantine contemporanee, la storia del sakè attraversa secoli di trasformazioni culturali, innovazioni e conoscenze tramandate tra generazioni. Non è soltanto la storia di una bevanda fermentata a base di riso. È anche il racconto di un rapporto profondo tra le comunità giapponesi, il territorio, la spiritualità e il sapere artigianale. Scopriamo come questa tradizione si è evoluta nel tempo.',
-      image: '/images/cantina-kura.jpg',
+      image: '/images/kura-sugidama.jpg',
       imageAlt:
         'Facciata storica di una kura tradizionale con sugidama in legno di cedro',
       badge: 'Hida Takayama — Antica Kura con Sugidama',
@@ -25,7 +25,7 @@ export const STORIA = {
       id: 'origini',
       eyebrow: '01 / LE ORIGINI',
       title: 'Le prime tracce di una tradizione millenaria',
-      image: '/images/storia-origini.jpg',
+      image: '/images/kura-origini.jpg',
       imageAlt:
         'Risaie terrazzate ancestrali nel Giappone montano alle prime luci',
       tag: 'Origini · 弥生時代',
@@ -95,7 +95,7 @@ export const STORIA = {
           era: '1868 – Metà Novecento',
           title:
             "Periodo Meiji e prima metà del Novecento | L'incontro tra tradizione e scienza",
-          text: "Con la modernizzazione del Giappone, anche la produzione del sakè entrò in una nuova fase. Le conoscenze tradizionali iniziarono a essere affiancate da studi scientifici sulla fermentazione e dalla progressiva introduzione di nuove tecnologie. Nel 1878 comparve la commercializzazione del sakè in bottiglie di vetro. Nel 1904 fu fondato il National Research Institute of Brewing, un istituto destinato a contribuire allo studio e al miglioramento delle tecniche produttive.",
+          text: 'Con la modernizzazione del Giappone, anche la produzione del sakè entrò in una nuova fase. Le conoscenze tradizionali iniziarono a essere affiancate da studi scientifici sulla fermentazione e dalla progressiva introduzione di nuove tecnologie. Nel 1878 comparve la commercializzazione del sakè in bottiglie di vetro. Nel 1904 fu fondato il National Research Institute of Brewing, un istituto destinato a contribuire allo studio e al miglioramento delle tecniche produttive.',
           more: {
             label: 'Dettaglio storico:',
             text: "La ricerca scientifica permise di approfondire il ruolo dei microrganismi e dei processi fermentativi, contribuendo all'evoluzione della qualità e della produzione.",
@@ -120,14 +120,14 @@ export const STORIA = {
       eyebrow: '03 / CULTURA E SPIRITUALITÀ',
       title: 'Tra spiritualità e tradizione',
       paragraphs: [
-        "Il sakè occupa da secoli un posto significativo nelle pratiche culturali e religiose giapponesi. Nello shintoismo viene tradizionalmente utilizzato in offerte rituali e cerimonie, in un contesto in cui il rapporto tra esseri umani, natura e divinità riveste un ruolo centrale. La sua presenza si ritrova anche in festività, matrimoni e altre occasioni comunitarie.",
-        "Il significato culturale del sakè va quindi oltre la sua produzione materiale: comprende simboli, rituali e forme di relazione sociale che si sono evoluti nel tempo. Anche templi buddhisti e santuari shintoisti hanno avuto un ruolo importante nella storia delle conoscenze produttive. Questa relazione tra spiritualità e artigianato contribuisce a spiegare perché la storia del sakè sia così profondamente intrecciata con quella del Giappone.",
+        'Il sakè occupa da secoli un posto significativo nelle pratiche culturali e religiose giapponesi. Nello shintoismo viene tradizionalmente utilizzato in offerte rituali e cerimonie, in un contesto in cui il rapporto tra esseri umani, natura e divinità riveste un ruolo centrale. La sua presenza si ritrova anche in festività, matrimoni e altre occasioni comunitarie.',
+        'Il significato culturale del sakè va quindi oltre la sua produzione materiale: comprende simboli, rituali e forme di relazione sociale che si sono evoluti nel tempo. Anche templi buddhisti e santuari shintoisti hanno avuto un ruolo importante nella storia delle conoscenze produttive. Questa relazione tra spiritualità e artigianato contribuisce a spiegare perché la storia del sakè sia così profondamente intrecciata con quella del Giappone.',
       ],
       didYouKnow: {
         title: 'Lo sapevi? — Le Botti nei Santuari',
-        text: "Presso alcuni santuari giapponesi si possono osservare grandi botti decorative di sakè, spesso offerte da produttori e associate alle tradizioni religiose locali. Sono una testimonianza visibile del legame tra il mondo della produzione e le istituzioni culturali e spirituali.",
+        text: 'Presso alcuni santuari giapponesi si possono osservare grandi botti decorative di sakè, spesso offerte da produttori e associate alle tradizioni religiose locali. Sono una testimonianza visibile del legame tra il mondo della produzione e le istituzioni culturali e spirituali.',
       },
-      image: '/images/hero-utsuwa.jpg',
+      image: '/images/kura-rituale.jpg',
       imageAlt: 'Botti decorative kazaridaru e ceramiche cerimoniali del sakè',
       tag: 'Rituale · お神酒',
       caption:
@@ -137,12 +137,12 @@ export const STORIA = {
     artigianale: {
       eyebrow: '04 / IL SAPERE ARTIGIANALE',
       title: 'Le kura, custodi di un sapere antico',
-      lead: "Per comprendere la storia del sakè è necessario conoscere anche i luoghi e le persone che ne hanno tramandato le conoscenze. Le cantine giapponesi, spesso indicate con il termine sakagura, sono luoghi nei quali tradizione, esperienza e competenza tecnica si incontrano.",
-      image: '/images/toji.jpg',
+      lead: 'Per comprendere la storia del sakè è necessario conoscere anche i luoghi e le persone che ne hanno tramandato le conoscenze. Le cantine giapponesi, spesso indicate con il termine sakagura, sono luoghi nei quali tradizione, esperienza e competenza tecnica si incontrano.',
+      image: '/images/kura-toji.jpg',
       imageAlt: "Maestro Toji all'opera con il riso al vapore",
       imageTag: 'Il gesto artigianale',
       imageTitle:
-        'Il riso al vapore esaminato con rigore sensoriale: il momento in cui l\u2019esperienza guida la fermentazione.',
+        'Il riso al vapore esaminato con rigore: il momento in cui l\u2019esperienza guida la fermentazione.',
       imageCredit: 'Documentario KURA',
       narrative:
         "Nel corso dei secoli, le conoscenze produttive sono state trasmesse attraverso l'apprendimento pratico, la collaborazione e l'esperienza maturata nelle diverse fasi della lavorazione. La figura del tōji, tradizionalmente responsabile della produzione, ha avuto un ruolo fondamentale nella gestione del lavoro e nella trasmissione delle competenze. Accanto al tōji operano i kurabito, i lavoratori specializzati della cantina. L'evoluzione degli strumenti e delle tecnologie non ha cancellato il valore delle conoscenze artigianali. Ancora oggi, molte realtà produttive conservano e reinterpretano pratiche sviluppate attraverso le generazioni.",
@@ -201,32 +201,38 @@ export const STORIA = {
       lead: 'Questo articolo è stato elaborato sulla base di documentazione storica e istituzionale giapponese.',
       items: [
         {
-          title: 'Japan Sake and Shochu Makers Association (JSS) — The History of Japanese Sake',
+          title:
+            'Japan Sake and Shochu Makers Association (JSS) — The History of Japanese Sake',
           label: 'Consulta la fonte',
           href: 'https://japansake.or.jp/sake/en/basic/japanese-sake-history/',
         },
         {
-          title: 'National Research Institute of Brewing (NRIB) — A Comprehensive Guide to Japanese Sake',
+          title:
+            'National Research Institute of Brewing (NRIB) — A Comprehensive Guide to Japanese Sake',
           label: 'Consulta PDF',
           href: 'https://www.nrib.go.jp/English/sake/pdf/guidesse01.pdf',
         },
         {
-          title: 'National Research Institute of Brewing (NRIB) — The Story of Sake',
+          title:
+            'National Research Institute of Brewing (NRIB) — The Story of Sake',
           label: 'Consulta PDF',
           href: 'https://www.nrib.go.jp/English/sake/pdf/SakeNo01_en.pdf',
         },
         {
-          title: 'UNESCO — Traditional knowledge and skills of sake-making with koji mold in Japan',
+          title:
+            'UNESCO — Traditional knowledge and skills of sake-making with koji mold in Japan',
           label: 'Consulta la fonte',
           href: 'https://ich.unesco.org/en/RL/traditional-knowledge-and-skills-of-sake-making-with-koji-mold-in-japan-01977',
         },
         {
-          title: 'National Tax Agency of Japan — Traditional knowledge and skills of sake-making with koji mold in Japan',
+          title:
+            'National Tax Agency of Japan — Traditional knowledge and skills of sake-making with koji mold in Japan',
           label: 'Consulta la fonte',
           href: 'https://www.nta.go.jp/traditional_sake_making/english/index.htm',
         },
         {
-          title: 'Japan Sake and Shochu Makers Association — Glossary of Sake Terms',
+          title:
+            'Japan Sake and Shochu Makers Association — Glossary of Sake Terms',
           label: 'Consulta la fonte',
           href: 'https://japansake.or.jp/sake/en/basic/glossary/',
         },

@@ -21,11 +21,12 @@ function waitForSettle(page) {
   );
 
   const imageLoads = Promise.all(
-    images.map((image) =>
-      new Promise((resolve) => {
-        image.addEventListener('load', resolve, { once: true });
-        image.addEventListener('error', resolve, { once: true });
-      }),
+    images.map(
+      (image) =>
+        new Promise((resolve) => {
+          image.addEventListener('load', resolve, { once: true });
+          image.addEventListener('error', resolve, { once: true });
+        }),
     ),
   );
 
@@ -38,7 +39,7 @@ function waitForSettle(page) {
 }
 
 function ScrollManager() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
 
   useEffect(() => {
     let cancelled = false;
@@ -69,19 +70,22 @@ function ScrollManager() {
 
     if (!hasTarget) return undefined;
 
-    waitForSettle(document)
-      .then(() => {
+    waitForSettle(document).then(() => {
+      if (cancelled) return;
+      window.requestAnimationFrame(() => {
         if (cancelled) return;
-        window.requestAnimationFrame(() => {
-          if (cancelled) return;
-          scrollToTarget();
-        });
+        scrollToTarget();
       });
+    });
 
     return () => {
       cancelled = true;
     };
-  }, [pathname, hash]);
+    // La key cambia a ogni navigazione, anche a parità di pathname e hash:
+    // la dipendenza "extra" è intenzionale, serve a riportare in cima quando
+    // si clicca il logo restando sulla home (dove il path non cambia).
+    // oxlint-disable-next-line react/exhaustive-effect-dependencies
+  }, [pathname, hash, key]);
 
   return null;
 }
