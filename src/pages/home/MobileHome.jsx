@@ -4,7 +4,8 @@ import { Link, useLocation } from 'react-router-dom';
 import './MobileHome.css';
 
 import { LANDING } from '../../content/landing.js';
-import { localizedPath } from '../../content/locale.js';
+import { getLocale, localizedPath } from '../../content/locale.js';
+import { UI } from '../../content/ui.js';
 
 import { postToSheet } from '../../config.js';
 
@@ -268,7 +269,7 @@ function MobileHome() {
                 pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}"
                 placeholder={progetto.newsletterPlaceholder}
                 required
-                title="Inserisci un'email completa, es. nome@esempio.it"
+                title={UI[getLocale()].emailHint}
                 type="email"
               />
               <button className="mobile-newsletter__submit" type="submit">

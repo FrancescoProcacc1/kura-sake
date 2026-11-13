@@ -14,6 +14,9 @@ export const UI = {
     backHome: '← Torna alla homepage',
     lastUpdated: 'Ultimo aggiornamento:',
     breadcrumbNav: 'Percorso di navigazione',
+    surveyProgress: 'Domanda {step} di {total}',
+    surveyProgressPct: '{percentage}% COMPLETATO',
+    emailHint: 'Inserisci un\u2019email completa, es. nome@esempio.it',
     langSwitch: { it: 'IT', en: 'EN' },
   },
 
@@ -27,6 +30,9 @@ export const UI = {
     backHome: '← Back to homepage',
     lastUpdated: 'Last updated:',
     breadcrumbNav: 'Breadcrumbs',
+    surveyProgress: 'Question {step} of {total}',
+    surveyProgressPct: '{percentage}% COMPLETED',
+    emailHint: 'Enter a complete email address, e.g. name@example.com',
     langSwitch: { it: 'IT', en: 'EN' },
   },
 };

@@ -3,6 +3,8 @@ import { useState } from 'react';
 import './Questionario.css';
 
 import { LANDING } from '../content/landing.js';
+import { getLocale } from '../content/locale.js';
+import { UI } from '../content/ui.js';
 
 import { postToSheet } from '../config.js';
 
@@ -13,6 +15,7 @@ const QUESTIONS = survey.questions;
 
 const TOTAL_STEPS = QUESTIONS.length;
 const DEFAULT_ANSWERS = { q1: 'poco' };
+const UI_LABELS = UI[getLocale()];
 
 function Questionario() {
   const [step, setStep] = useState(1);
@@ -22,6 +25,9 @@ function Questionario() {
   const question = QUESTIONS[step - 1];
   const percentage = Math.round((step / TOTAL_STEPS) * 100);
   const progress = `${(step / TOTAL_STEPS) * 100}%`;
+  const progressLabel = UI_LABELS.surveyProgress
+    .replace('{step}', step)
+    .replace('{total}', TOTAL_STEPS);
 
   const select = (id, value) => {
     setAnswers((previous) => ({ ...previous, [id]: value }));
@@ -56,7 +62,7 @@ function Questionario() {
                 <div className="questionario__progress">
                   <div className="questionario__progress-head">
                     <span className="questionario__progress-label">
-                      Domanda {step} di {TOTAL_STEPS}
+                      {progressLabel}
                     </span>
                     <span>{percentage}%</span>
                   </div>
