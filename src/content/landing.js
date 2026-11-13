@@ -285,6 +285,7 @@ export const LANDING = {
         { id: 'produzione', label: 'Produzione', href: '#produzione' },
         { id: 'giappone', label: 'Giappone', href: '#giappone' },
         { id: 'progetto', label: 'Il progetto', href: '#progetto' },
+        { id: 'storia', label: 'Storia del sakè', href: '/storia-del-sake' },
         { id: 'privacy', label: 'Privacy Policy', href: '/privacy-policy' },
         { id: 'cookie', label: 'Cookie Policy', href: '/cookie-policy' },
       ],
@@ -533,6 +534,7 @@ export const LANDING = {
           title: 'Esperienza',
           links: [
             { label: 'Il progetto', href: '#progetto' },
+            { label: 'Storia del sakè', href: '/storia-del-sake' },
             { label: 'Privacy Policy', href: '/privacy-policy' },
             { label: 'Cookie Policy', href: '/cookie-policy' },
           ],
@@ -820,6 +822,7 @@ export const LANDING = {
         { id: 'produzione', label: 'Produzione', href: '#produzione' },
         { id: 'giappone', label: 'Giappone', href: '#giappone' },
         { id: 'progetto', label: 'Il progetto', href: '#progetto' },
+        { id: 'storia', label: 'Storia del sakè', href: '/storia-del-sake' },
         { id: 'privacy', label: 'Privacy Policy', href: '/privacy-policy' },
         { id: 'cookie', label: 'Cookie Policy', href: '/cookie-policy' },
       ],
