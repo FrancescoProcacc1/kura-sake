@@ -4,12 +4,15 @@ import './TabletSurvey.css';
 import './TabletTheme.css';
 
 import { LANDING } from '../../content/landing.js';
+import { getLocale } from '../../content/locale.js';
+import { UI } from '../../content/ui.js';
 
 import { postToSheet } from '../../config.js';
 
 const survey = LANDING.tablet.survey;
 
 const TOTAL_STEPS = survey.questions.length;
+const UI_LABELS = UI[getLocale()];
 
 function TabletSurvey() {
   const [step, setStep] = useState(1);
@@ -50,10 +53,12 @@ function TabletSurvey() {
             <div className="tablet-survey__progress">
               <div className="tablet-survey__progress-head">
                 <span className="t-label-sm tablet-survey__step">
-                  Domanda {step} di {TOTAL_STEPS}
+                  {UI_LABELS.surveyProgress
+                    .replace('{step}', step)
+                    .replace('{total}', TOTAL_STEPS)}
                 </span>
                 <span className="t-mono tablet-survey__percentage">
-                  {percentage}% COMPLETATO
+                  {UI_LABELS.surveyProgressPct.replace('{percentage}', percentage)}
                 </span>
               </div>
               <div className="tablet-survey__track">

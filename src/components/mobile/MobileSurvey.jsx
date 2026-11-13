@@ -3,6 +3,8 @@ import { useState } from 'react';
 import './MobileSurvey.css';
 
 import { LANDING } from '../../content/landing.js';
+import { getLocale } from '../../content/locale.js';
+import { UI } from '../../content/ui.js';
 
 import { postToSheet } from '../../config.js';
 
@@ -13,6 +15,7 @@ const QUESTIONS = survey.questions;
 
 const TOTAL_STEPS = QUESTIONS.length;
 const DEFAULT_ANSWERS = { q1: 'mai' };
+const UI_LABELS = UI[getLocale()];
 
 function MobileSurvey() {
   const [step, setStep] = useState(1);
@@ -22,6 +25,9 @@ function MobileSurvey() {
   const question = QUESTIONS[step - 1];
   const percentage = Math.round((step / TOTAL_STEPS) * 100);
   const isLastStep = step === TOTAL_STEPS;
+  const progressLabel = UI_LABELS.surveyProgress
+    .replace('{step}', step)
+    .replace('{total}', TOTAL_STEPS);
 
   const select = (id, value) => {
     setAnswers((previous) => ({ ...previous, [id]: value }));
@@ -56,7 +62,7 @@ function MobileSurvey() {
             <div className="mobile-survey__progress">
               <div className="mobile-survey__progress-head">
                 <span className="mobile-survey__step-label">
-                  Domanda {step} di {TOTAL_STEPS}
+                  {progressLabel}
                 </span>
                 <button
                   className="mobile-survey__skip"
