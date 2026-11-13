@@ -23,17 +23,19 @@ function MobileHeader() {
             <span className="mobile-header__kanji">酒</span>
           </Link>
 
-          <LangSwitch />
+          <div className="mobile-header__right">
+            <LangSwitch />
 
-          <button
-            aria-expanded={menuOpen}
-            aria-label={labels.openMenu}
-            className="mobile-header__menu-button"
-            onClick={() => setMenuOpen(true)}
-            type="button"
-          >
-            <Icon name="menu" className="mobile-header__menu-icon" />
-          </button>
+            <button
+              aria-expanded={menuOpen}
+              aria-label={labels.openMenu}
+              className="mobile-header__menu-button"
+              onClick={() => setMenuOpen(true)}
+              type="button"
+            >
+              <Icon name="menu" className="mobile-header__menu-icon" />
+            </button>
+          </div>
         </div>
       </header>
 
