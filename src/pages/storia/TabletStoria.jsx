@@ -7,6 +7,8 @@ import Icon from '../../components/Icon.jsx';
 import SiteHeader from '../../components/SiteHeader.jsx';
 import TabletFooter from '../../components/tablet/TabletFooter.jsx';
 import { STORIA } from '../../content/storia.js';
+import { getLocale } from '../../content/locale.js';
+import { UI } from '../../content/ui.js';
 
 /*
  * La variante tablet condivide i testi con la versione desktop
@@ -18,7 +20,7 @@ const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI'];
 
 function TabletBreadcrumb() {
   return (
-    <nav aria-label="Percorso di navigazione" className="storia-t-breadcrumb">
+    <nav aria-label={UI[getLocale()].breadcrumbNav} className="storia-t-breadcrumb">
       <Link to="/">Home</Link>
       <span aria-hidden="true" className="storia-t-breadcrumb__sep">
         /

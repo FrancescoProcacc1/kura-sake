@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './TabletHome.css';
 
 import { LANDING } from '../../content/landing.js';
+import { localizedPath } from '../../content/locale.js';
 
 import { postToSheet } from '../../config.js';
 
@@ -61,7 +62,7 @@ function TabletHome() {
               </a>
               <Link
                 className="t-label-md tablet-btn tablet-btn--secondary"
-                to="/storia-del-sake"
+                to={localizedPath('/storia-del-sake')}
               >
                 {hero.ctaSecondary}
               </Link>

@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { useMediaQuery } from '../hooks/useMediaQuery.js';
 import { useSeo } from '../seo/useSeo.js';
 import { LEGAL } from '../content/legal.js';
+import { getLocale, localizedPath } from '../content/locale.js';
+import { UI } from '../content/ui.js';
 import MobileFooter from '../components/mobile/MobileFooter.jsx';
 import MobileHeader from '../components/mobile/MobileHeader.jsx';
 import SiteHeader from '../components/SiteHeader.jsx';
@@ -37,14 +39,18 @@ function MobileChrome({ children }) {
 }
 
 function LegalBody({ doc }) {
+  const labels = UI[getLocale()];
+
   return (
     <article className="legal">
       <nav className="legal__back">
-        <Link to="/">← Torna alla homepage</Link>
+        <Link to={localizedPath('/')}>{labels.backHome}</Link>
       </nav>
 
       <h1 className="legal__title">{doc.title}</h1>
-      <p className="legal__updated">Ultimo aggiornamento: {doc.updated}</p>
+      <p className="legal__updated">
+        {labels.lastUpdated} {doc.updated}
+      </p>
       <p className="legal__intro">{doc.intro}</p>
 
       {doc.sections.map((section) => (

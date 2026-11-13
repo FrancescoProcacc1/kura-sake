@@ -7,6 +7,8 @@ import Icon from '../../components/Icon.jsx';
 import MobileFooter from '../../components/mobile/MobileFooter.jsx';
 import MobileHeader from '../../components/mobile/MobileHeader.jsx';
 import { STORIA } from '../../content/storia.js';
+import { getLocale } from '../../content/locale.js';
+import { UI } from '../../content/ui.js';
 
 /*
  * La variante mobile condivide i testi con la versione desktop
@@ -16,7 +18,7 @@ const content = STORIA.desktop;
 
 function MobileBreadcrumb() {
   return (
-    <nav aria-label="Percorso di navigazione" className="storia-mobile-breadcrumb">
+    <nav aria-label={UI[getLocale()].breadcrumbNav} className="storia-mobile-breadcrumb">
       <Link to="/">Home</Link>
       <span aria-hidden="true" className="storia-mobile-breadcrumb__sep">
         /
