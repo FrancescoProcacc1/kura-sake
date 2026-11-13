@@ -4,10 +4,14 @@ import { Link, useLocation } from 'react-router-dom';
 import './SiteHeader.css';
 
 import { LANDING } from '../content/landing.js';
+import { getLocale } from '../content/locale.js';
+import { UI } from '../content/ui.js';
 
 import Icon from './Icon.jsx';
+import LangSwitch from './LangSwitch.jsx';
 
 const NAV_LINKS = LANDING.desktop.nav;
+const UI_LABELS = UI[getLocale()];
 
 // Tutte le sezioni in ordine di documento: servono a capire in quale sezione
 // si trova l'utente, anche per quelle non presenti nel menu.
@@ -90,8 +94,10 @@ function SiteHeader() {
 
   // Dalla landing le ancore restano interne; dalle altre pagine devono
   // puntare alla radice per raggiungere le sezioni della monografia.
-  const prefix = pathname === '/' ? '' : '/';
-  const isHome = pathname === '/';
+  // In inglese la radice è /en, quindi il prefisso cambia di conseguenza.
+  const locale = getLocale();
+  const isHome = pathname === '/' || pathname === '/en';
+  const prefix = isHome ? '' : locale === 'en' ? '/en/' : '/';
 
   const [activeId, activate] = useActiveSection(isHome);
 
@@ -103,7 +109,7 @@ function SiteHeader() {
           <span className="site-header__kanji">酒</span>
           <span className="site-header__separator" />
           <span className="site-header__tagline">
-            Cultura, tradizione e territorio giapponese
+            {UI_LABELS.headerTagline}
           </span>
         </Link>
 
@@ -130,8 +136,9 @@ function SiteHeader() {
         </nav>
 
         <div className="site-header__account">
+          <LangSwitch />
           <a className="site-header__cta" href={`${prefix}#questionario`}>
-            <span>Questionario</span>
+            <span>{UI_LABELS.headerCta}</span>
             <Icon name="arrow_outward" className="site-header__cta-icon" />
           </a>
         </div>

@@ -18,7 +18,10 @@ class PuppeteerRenderer {
   }
 
   async initialize() {
-    this.browser = await launch({ headless: true });
+    this.browser = await launch({
+      args: ['--lang=it-IT', '--accept-lang=it-IT,it'],
+      headless: true,
+    });
   }
 
   async renderRoutes(routes, prerenderer) {
@@ -56,7 +59,16 @@ export default defineConfig({
     tailwindcss(),
     vitePrerender({
       staticDir: fileURLToPath(new URL('./dist', import.meta.url)),
-      routes: ['/', '/storia-del-sake', '/privacy-policy', '/cookie-policy'],
+      routes: [
+      '/',
+      '/storia-del-sake',
+      '/privacy-policy',
+      '/cookie-policy',
+      '/en',
+      '/en/storia-del-sake',
+      '/en/privacy-policy',
+      '/en/cookie-policy',
+    ],
       renderer: new PuppeteerRenderer(),
     }),
   ],

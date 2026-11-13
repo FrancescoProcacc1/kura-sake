@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom';
 import Icon from '../../components/Icon.jsx';
 import SiteLayout from '../../components/SiteLayout.jsx';
 import { STORIA } from '../../content/storia.js';
+import { getLocale } from '../../content/locale.js';
+import { UI } from '../../content/ui.js';
 
 const content = STORIA.desktop;
 
 function Breadcrumb() {
   return (
-    <nav aria-label="Percorso di navigazione" className="storia-breadcrumb">
+    <nav aria-label={UI[getLocale()].breadcrumbNav} className="storia-breadcrumb">
       <div className="shell">
         <ol className="storia-breadcrumb__list">
           <li className="storia-breadcrumb__item">

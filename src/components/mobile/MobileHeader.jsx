@@ -6,9 +6,13 @@ import './MobileMenu.css';
 
 import MobileMenu from './MobileMenu.jsx';
 import Icon from '../Icon.jsx';
+import LangSwitch from '../LangSwitch.jsx';
+import { getLocale } from '../../content/locale.js';
+import { UI } from '../../content/ui.js';
 
 function MobileHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const labels = UI[getLocale()];
 
   return (
     <>
@@ -19,9 +23,11 @@ function MobileHeader() {
             <span className="mobile-header__kanji">酒</span>
           </Link>
 
+          <LangSwitch />
+
           <button
             aria-expanded={menuOpen}
-            aria-label="Apri menu"
+            aria-label={labels.openMenu}
             className="mobile-header__menu-button"
             onClick={() => setMenuOpen(true)}
             type="button"

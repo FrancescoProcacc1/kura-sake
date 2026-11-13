@@ -3,6 +3,8 @@ import { useEffect, useRef } from 'react';
 import './MobileMenu.css';
 
 import { LANDING } from '../../content/landing.js';
+import { getLocale } from '../../content/locale.js';
+import { UI } from '../../content/ui.js';
 
 import Icon from '../Icon.jsx';
 
@@ -12,6 +14,7 @@ const FOCUSABLE = 'a[href], button:not([disabled])';
 
 function MobileMenu({ open, onClose }) {
   const panelRef = useRef(null);
+  const labels = UI[getLocale()];
 
   // Escape chiude il pannello, il click sui link chiude il menu e lo scroll
   // della pagina resta bloccato mentre il pannello è aperto.
@@ -66,7 +69,7 @@ function MobileMenu({ open, onClose }) {
       <div className="mobile-menu__backdrop" onClick={onClose} />
 
       <div
-        aria-label="Indice"
+        aria-label={labels.menuIndex}
         aria-modal="true"
         className="mobile-menu__panel"
         ref={panelRef}
@@ -74,9 +77,9 @@ function MobileMenu({ open, onClose }) {
         tabIndex={-1}
       >
         <div className="mobile-menu__head">
-          <span className="mobile-menu__title">Indice</span>
+          <span className="mobile-menu__title">{labels.menuIndex}</span>
           <button
-            aria-label="Chiudi menu"
+            aria-label={labels.closeMenu}
             className="mobile-menu__close"
             onClick={onClose}
             type="button"
@@ -100,7 +103,7 @@ function MobileMenu({ open, onClose }) {
         </nav>
 
         <div className="mobile-menu__foot">
-          <p className="mobile-menu__foot-text">KURA 酒 — Archivio Culturale</p>
+          <p className="mobile-menu__foot-text">{labels.archiveTag}</p>
         </div>
       </div>
     </div>

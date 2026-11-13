@@ -1,11 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
   <url>
     <loc>https://kurasake.it/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link
+      href="https://kurasake.it/"
+      hreflang="it"
+      rel="alternate"
+      type="text/html"
+    />
+    <xhtml:link
+      href="https://kurasake.it/en"
+      hreflang="en"
+      rel="alternate"
+      type="text/html"
+    />
+    <xhtml:link
+      href="https://kurasake.it/"
+      hreflang="x-default"
+      rel="alternate"
+      type="text/html"
+    />
+  </url>
+  <url>
+    <loc>https://kurasake.it/en</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link
+      href="https://kurasake.it/"
+      hreflang="it"
+      rel="alternate"
+      type="text/html"
+    />
+    <xhtml:link
+      href="https://kurasake.it/en"
+      hreflang="en"
+      rel="alternate"
+      type="text/html"
+    />
+    <xhtml:link
+      href="https://kurasake.it/"
+      hreflang="x-default"
+      rel="alternate"
+      type="text/html"
+    />
   </url>
   <url>
     <loc>https://kurasake.it/storia-del-sake</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link
+      href="https://kurasake.it/storia-del-sake"
+      hreflang="it"
+      rel="alternate"
+      type="text/html"
+    />
+    <xhtml:link
+      href="https://kurasake.it/en/storia-del-sake"
+      hreflang="en"
+      rel="alternate"
+      type="text/html"
+    />
+    <xhtml:link
+      href="https://kurasake.it/storia-del-sake"
+      hreflang="x-default"
+      rel="alternate"
+      type="text/html"
+    />
+  </url>
+  <url>
+    <loc>https://kurasake.it/en/storia-del-sake</loc>
+    <lastmod>2026-11-13</lastmod>
+    <xhtml:link
+      href="https://kurasake.it/storia-del-sake"
+      hreflang="it"
+      rel="alternate"
+      type="text/html"
+    />
+    <xhtml:link
+      href="https://kurasake.it/en/storia-del-sake"
+      hreflang="en"
+      rel="alternate"
+      type="text/html"
+    />
+    <xhtml:link
+      href="https://kurasake.it/storia-del-sake"
+      hreflang="x-default"
+      rel="alternate"
+      type="text/html"
+    />
   </url>
 </urlset>

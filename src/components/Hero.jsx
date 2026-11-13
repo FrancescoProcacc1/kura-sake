@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Hero.css';
 
 import { LANDING } from '../content/landing.js';
+import { localizedPath } from '../content/locale.js';
 
 const hero = LANDING.desktop.hero;
 
@@ -26,7 +27,7 @@ function Hero() {
             <a className="btn btn--primary" href="#scopri">
               {hero.ctaPrimary}
             </a>
-            <Link className="btn btn--outline" to="/storia-del-sake">
+            <Link className="btn btn--outline" to={localizedPath('/storia-del-sake')}>
               {hero.ctaSecondary}
             </Link>
           </div>

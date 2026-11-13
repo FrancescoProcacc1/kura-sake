@@ -1,0 +1,36 @@
+/* Selettore lingua IT/EN, condiviso tra header desktop, tablet e mobile. */
+
+.lang-switch {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.lang-switch__link {
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  opacity: 0.55;
+  padding: 0.3rem 0.15rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.lang-switch__link:hover {
+  opacity: 0.85;
+}
+
+.lang-switch__link--active {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.lang-switch__separator {
+  opacity: 0.35;
+}
