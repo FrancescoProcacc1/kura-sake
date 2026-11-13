@@ -228,14 +228,14 @@ export const LANDING = {
           ],
         },
       ],
-      skip: 'Skip survey',
+      skip: 'Skip questionnaire',
       back: '← Back',
       next: 'Next →',
       submit: 'Send answers →',
       completionTitle: 'Thank you for taking part!',
       completionText:
         'Your input helps us decide which stories and insights to tell through KURA.',
-      restart: 'Restart survey',
+      restart: 'Restart questionnaire',
     },
 
     progetto: {
@@ -488,12 +488,12 @@ export const LANDING = {
           ],
         },
       ],
-      skip: 'Skip survey',
+      skip: 'Skip questionnaire',
       next: 'Next',
       completionTitle: 'Thank you for taking part!',
       completionText:
         'Your input helps us decide which stories and insights to tell through KURA.',
-      restart: 'Restart survey',
+      restart: 'Restart questionnaire',
     },
 
     progetto: {
@@ -553,7 +553,7 @@ export const LANDING = {
       { id: 'scopri', label: 'Discover sake', number: '01' },
       { id: 'produzione', label: 'Production', number: '02' },
       { id: 'giappone', label: 'Japan', number: '03' },
-      { id: 'questionario', label: 'Survey', number: '04' },
+      { id: 'questionario', label: 'Questionnaire', number: '04' },
       { id: 'progetto', label: 'The project', number: '05' },
     ],
 
@@ -750,14 +750,14 @@ export const LANDING = {
           ],
         },
       ],
-      skip: 'Skip survey',
+      skip: 'Skip questionnaire',
       back: '← Back',
       next: 'Next',
       submit: 'Send answers',
       completionTitle: 'Thank you for taking part!',
       completionText:
         'Your input helps us decide which stories and insights to tell through KURA.',
-      restart: 'Restart survey',
+      restart: 'Restart questionnaire',
     },
 
     progetto: {
